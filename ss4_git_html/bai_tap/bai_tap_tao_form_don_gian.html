@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tao form don gian</title>
+  <style>
+   table {
+     width: 30%;
+     font-family: "Apple Braille", monospace;
+   }
+   th {
+     font-size: 20px;
+     padding: 5px;
+   }
+   td {
+     padding: 5px;
+   }
+   tr:nth-child(1) {
+     text-align: center;
+     background-color: #dd4d07;
+     color: white;
+   }
+  </style>
+</head>
+<body>
+<table style="width:200">
+  <tr>
+    <th colspan="2">SỞ THÍCH CỦA BẠN</th>
+  </tr>
+  <tr>
+    <td style="text-align:right; color: blue; width: 100px"><label for="yourname">Họ và tên</label></td>
+    <td>
+      <form action="bai_tap_tao_form_don_gian.html" method="get">
+        <input type="text" name="yourname" id="yourname" size="25"></form>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:right; color: blue;"><label for="email">Email</label></td>
+    <td>
+      <form action="bai_tap_tao_form_don_gian.html" method="get">
+        <input type="text" name="email" id="email"></form>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:right; color: blue;"><label for="hobby">Sở thích</label></td>
+    <td>
+          <input type="checkbox" name="hobby" id="hobby" value="Thể thao">Thể thao</input>
+          <input type="checkbox" name="hobby" id="hobby" value="Âm nhạc">Âm nhạc</input>
+          <input type="checkbox" name="hobby" id="hobby" value="Đọc sách">Đọc sách</input>
+          <input type="checkbox" name="hobby" id="hobby" value="Lướt web">Lướt web</input>
+          <input type="checkbox" name="hobby" id="hobby" value="Chơi game">Chơi game</input>
+          <input type="checkbox" name="hobby" id="hobby" value="Điện ảnh">Điện ảnh</input>
+          <input type="checkbox" name="hobby" id="hobby" value="Du lịch">Du lịch</input>
+    </td>
+  </tr>
+  <tr>
+    <td> </td>
+    <td>
+      <input type="submit" value="Gửi thông tin">
+      <input type="reset" value="Nhập lại">
+    </td>
+  </tr>
+
+<!--</table>-->
+<!--<form action="bai_tap_tao_form_don_gian.html" method="get">-->
+<!--  <label for="yourname">Họ và tên</label>-->
+
+<!--  <br>-->
+<!--  <p>-->
+<!--    <label for="email">Email</label>-->
+<!--    <input type="text" name="email" id="email" size="15">-->
+<!--  </p>-->
+<!--  <br>-->
+<!--  <p>-->
+<!--    <label for="hobby">Sở thích</label>-->
+<!--    <input type="checkbox" name="hobby" id="hobby" value="Thể thao">Thể thao</input>-->
+<!--    <input type="checkbox" name="hobby" id="hobby" value="Âm nhạc">Âm nhạc</input>-->
+<!--    <input type="checkbox" name="hobby" id="hobby" value="Đọc sách">Đọc sách</input>-->
+<!--    <input type="checkbox" name="hobby" id="hobby" value="Lướt web">Lướt web</input>-->
+<!--    <input type="checkbox" name="hobby" id="hobby" value="Chơi game">Chơi game</input>-->
+<!--    <input type="checkbox" name="hobby" id="hobby" value="Điện ảnh">Điện ảnh</input>-->
+<!--    <input type="checkbox" name="hobby" id="hobby" value="Du lịch">Du lịch</input>-->
+<!--  </p>-->
+</form>
+</body>
+</html>
