@@ -18,6 +18,12 @@
      color: white;
      font-size: 20px;
    }
+   .checkbox-square {
+     width: 15px;
+     height: 15px;
+     vertical-align: middle;
+     border: 5px solid black;
+   }
   </style>
 </head>
 <body>
@@ -29,28 +35,28 @@
     <tr>
       <td style="text-align:right; color: blue; width: 100px"><label for="yourname">Họ và tên</label></td>
       <td colspan="3">
-          <input type="text" name="yourname" id="yourname" size="25">
+          <input type="text" name="yourname" id="yourname" size="25" style="border-style: inset">
       </td>
     </tr>
     <tr>
       <td style="text-align:right; color: blue;"><label for="email">Email</label></td>
       <td colspan="3">
-        <input type="text" name="email" id="email">
+        <input type="text" name="email" id="email" style="border-style: inset">
       </td>
     </tr>
     <tr>
       <td rowspan="3" style="text-align:right; color: blue; vertical-align: top">Sở thích</td>
-      <td><input type="checkbox" name="hobby" value="Thể thao">Thể thao</input></td>
-      <td><input type="checkbox" name="hobby" value="Âm nhạc">Âm nhạc</input></td>
-      <td><input type="checkbox" name="hobby" value="Đọc sách">Đọc sách</input></td>
+      <td><input type="checkbox" name="hobby" id="h1" value="Thể thao" class="checkbox-square"><label for="h1" style="color:orange">Thể thao</label></td>
+      <td><input type="checkbox" name="hobby" id="h2" value="Âm nhạc" class="checkbox-square"><label for="h2" style="color:orange">Âm nhạc</label></td>
+      <td><input type="checkbox" name="hobby" id="h3" value="Đọc sách" class="checkbox-square"><label for="h3" style="color:orange">Đọc sách</label></td>
     </tr>
     <tr>
-      <td><input type="checkbox" name="hobby" id="hobby" value="Lướt web">Lướt web</input></td>
-      <td><input type="checkbox" name="hobby" id="hobby" value="Chơi game">Chơi game</input></td>
-      <td><input type="checkbox" name="hobby" id="hobby" value="Điện ảnh">Điện ảnh</input></td>
+      <td><input type="checkbox" name="hobby" id="h4" value="Lướt web" class="checkbox-square"><label for="h4" style="color:orange">Lướt web</label></td>
+      <td><input type="checkbox" name="hobby" id="h5" value="Chơi game" class="checkbox-square"><label for="h5" style="color:orange">Chơi game</label></td>
+      <td><input type="checkbox" name="hobby" id="h6" value="Điện ảnh" class="checkbox-square"><label for="h6" style="color:orange">Điện ảnh</label></td>
     </tr>
     <tr>
-      <td><input type="checkbox" name="hobby" id="hobby" value="Du lịch">Du lịch</input></td>
+      <td><input type="checkbox" name="hobby" id="h7" value="Du lịch" class="checkbox-square"><label for="h7" style="color:orange">Du lịch</label></td>
     </tr>
     <tr>
       <td></td>
