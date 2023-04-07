@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai tap chuyen doi tien te</title>
+</head>
+<body>
+  <table>
+  <tr>
+    <th>Amount</th>
+    <th>From Currency</th>
+    <th>To Currency</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><input id="number" type="number" name="number"></td>
+    <td>
+      <select id="type1" name="type1">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+      </select>
+    </td>
+    <td>
+      <select id="type2" name="type2">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+      </select>
+    </td>
+    <td>
+      <button type="button" onclick="Doitien()">Convert</button>
+    </td>
+  </tr>
+  </table>
+<p id="location"></p>
+<script>
+  function Doitien() {
+    let a = document.getElementById('number').value;
+    let b = document.getElementById('type1').value;
+    let c = document.getElementById('type2').value;
+    let usdvnd = a * 23000
+    let vndusd = a / 23000
+    if (b == 'USD' && c == 'VND') {
+      document.getElementById('location').innerText = a + ' USD = ' + usdvnd + ' VND'
+    }
+    else if (b == 'VND' && c == 'USD') {
+      document.getElementById('location').innerText = a + ' VND = ' + vndusd + ' USD'
+    }
+    else {
+      alert('Nhập lại kìa, hai loại tiền tệ giống nhau!!!')
+    }
+  }
+</script>
+</body>
+</html>
