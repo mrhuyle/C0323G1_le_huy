@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai tap 1</title>
+</head>
+<p id="averageScore"></p>
+<body>
+<script>
+    let physics = prompt('Nhập điểm Vật lý vào đây')
+    let chemistry = prompt('Nhập điểm Hoá học vào đây')
+    let biology = prompt('Nhập điểm Sinh học vào đây')
+    let average = ((Number(physics) + Number(chemistry) + Number(biology))) / 3
+    document.getElementById('averageScore').innerText = 'Điểm trung bình Vật lý, Hoá học, Sinh học là: ' + average
+</script>
+</body>
+</html>
