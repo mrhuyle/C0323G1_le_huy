@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thuc hanh khai bao Bien</title>
+</head>
+<body>
+<button type="button" onclick="Nhap()">Nhap Gia Tri a va b</button>
+<br>
+<script>
+
+    //Bài tập 1
+    // let i = 10;
+    // let f = 20.5;
+    // let b = true;
+    // let s = 'Hà Nội';
+    // document.write('i = ' + i);
+    // document.write('<br>');
+    // document.write('f = ' + f);
+    // document.write('<br>');
+    // document.write('b = ' + b);
+    // document.write('<br>');
+    // document.write("s = " + s);
+    // document.write('<br>')
+    // document.write('<br>')
+    //<br> và <br/> theo hướng dẫn --> giống nhau, xài <br> cho nó đơn giản
+    //có cần dùng ; để cách lệnh --> vẫn phải dùng mặc dù không dùng thì JS vẫn chạy code
+    //lưu ý <br> vẫn phải để trong '', không để trong ' ' sẽ hiểu là biến hay gì?
+    //"" sẽ hiển thị cái gì? --> giống ' '
+    //cách để code nhanh sau document.
+
+    //Bài tập 2
+
+    // let width = 100;
+    // let height = 30;
+    // let area = width * height;
+    // document.write('area = ' + area);
+    // document.write('<br>')
+    // document.write('<br>')
+
+    //Bài tập 3:
+
+    function Nhap() {
+        let a = prompt('Nhập giá trị cho biến a đi bạn?');
+        let b = prompt('Nhập giá trị cho biến b đi bạn?');
+        let c = a % b;
+        if (c == 0) {
+            alert ('a chia hết cho b')}
+        else {
+            alert ('a KHÔNG chia hết cho b')
+        }
+    }
+
+    // function Nhapb() {
+    //     let b = prompt('Nhập giá trị cho biến b đi bạn?')
+    // }
+    // console.log(a)
+    //
+    // document.write('<br>')
+    // document.write('b = ' + b);
+    // let b = prompt('Nhập giá trị cho biến b đi nhé?');
+    // let a = Number(a);
+    // let b = Number(b);
+    // let result = a % b
+</script>
+</body>
+</html>
