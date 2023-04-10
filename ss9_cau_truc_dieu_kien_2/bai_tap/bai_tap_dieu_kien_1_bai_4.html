@@ -19,5 +19,14 @@
 </table>
 <button type="button" onclick="check()">Kiểm tra số lớn nhất</button>
 <p id="result"></p>
+<script>
+  function check() {
+    let numbera = document.getElementById('numbera').value
+    let numberb = document.getElementById('numberb').value
+    let numberc = document.getElementById('numberc').value
+    let max = Math.max(numbera , numberb , numberc)
+    document.getElementById('result').innerText = 'Số lớn nhất là: ' + 
+  }
+</script>
 </body>
 </html>
