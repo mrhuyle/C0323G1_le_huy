@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau truc dieu kien loai 1 - Bai tap 6</title>
+</head>
+<body>
+<h1>Tính hoa hồng theo doanh số</h1>
+<table>
+    <tr>
+        <th></th>
+        <th>Doanh số</th>
+    </tr>
+    <tr>
+        <td>Quý I</td>
+        <td><input type="number" id="quy1">$</td>
+    </tr>
+    <tr>
+        <td>Quý II</td>
+        <td><input type="number" id="quy2">$</td>
+    </tr>
+    <tr>
+        <td>Quý III</td>
+        <td><input type="number" id="quy3">$</td>
+    </tr>
+    <tr>
+        <td>Quý IV</td>
+        <td><input type="number" id="quy4">$</td>
+    </tr>
+    <tr>
+        <td>Cả năm</td>
+        <td><input type="number" id="caNam">$</td>
+    </tr>
+</table>
+<button type="button" onclick="tinhHoahong()">Tính hoa hồng</button>
+<p id="result"></p>
+<script>
+    function tinhHoahong() {
+        let quy1 = +document.getElementById('quy1').value;
+        let quy2 = +document.getElementById('quy2').value;
+        let quy3 = +document.getElementById('quy3').value;
+        let quy4 = +document.getElementById('quy4').value;
+        let tong = (quy1 + quy2 + quy3 + quy4) / 4;
+        document.getElementById('caNam').value = tong;
+        if (tong <= 1000) {
+            if (tong <= 700) {
+                if (tong <= 500) {
+                    document.getElementById('result').innerText = 'Doanh số cả năm là ' + tong + ' $. Hoa hồng đạt 1%';
+                } else {
+                    document.getElementById('result').innerText = 'Doanh số cả năm là ' + tong + ' $. Hoa hồng đạt 5%';
+                }
+            } else {
+                document.getElementById('result').innerText = 'Doanh số cả năm là ' + tong + ' $. Hoa hồng đạt 7%';
+            }
+        } else {
+            document.getElementById('result').innerText = 'Xuất sắc. Doanh số cả năm là ' + tong + ' $. Hoa hồng đạt 10%';
+        }
+    }
+</script>
+</body>
+</html>

@@ -18,7 +18,7 @@
     function tinhBMI() {
         let canNang = document.getElementById('canNang').value;
         let chieuCao = document.getElementById('chieuCao').value;
-        let bmi = canNang / (chieuCao ^ 2)
+        let bmi = canNang / (chieuCao ^ 2);
         if (bmi < 30) {
             if (bmi < 25) {
                 if (bmi < 18.5) {
@@ -27,10 +27,10 @@
                     document.getElementById('result').innerText = 'Chỉ số bmi là: ' + bmi + ' . Bạn "Normal"';
                 }
             } else {
-                document.getElementById('result').innerText = 'Chỉ số bmi là: ' + bmi + ' . Bạn "Overweight"'
+                document.getElementById('result').innerText = 'Chỉ số bmi là: ' + bmi + ' . Bạn "Overweight"';
             }
         } else {
-            document.getElementById('result').innerText = 'Chỉ số bmi là: ' + bmi + ' . Bạn "Obese"'
+            document.getElementById('result').innerText = 'Chỉ số bmi là: ' + bmi + ' . Bạn "Obese"';
         }
     }
 </script>
