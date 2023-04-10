@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau truc dieu kien loai 1 - Bai tap 5</title>
+</head>
+<body>
+<h1>Nhập điểm xếp hạng học lực khối A</h1>
+<table>
+    <tr>
+        <th></th>
+        <th>Điểm Toán</th>
+        <th>Điểm Lý</th>
+        <th>Điểm Hoá</th>
+    </tr>
+    <tr>
+        <td>Điểm giữa kỳ</td>
+        <td><input type="number" id="diemGiuakyToan"></td>
+        <td><input type="number" id="diemGiuakyLy"></td>
+        <td><input type="number" id="diemGiuakyHoa"></td>
+    </tr>
+    <tr>
+        <td>Điểm cuối kỳ</td>
+        <td><input type="number" id="diemCuoikyToan"></td>
+        <td><input type="number" id="diemCuoikyLy"></td>
+        <td><input type="number" id="diemCuoikyHoa"></td>
+    </tr>
+    <tr>
+        <td>Điểm tổng kết</td>
+        <td><input type="number" id="diemTongketToan"></td>
+        <td><input type="number" id="diemTongketLy"></td>
+        <td><input type="number" id="diemTongketHoa"></td>
+    </tr>
+</table>
+<button type="button" onclick="tinhDiem()">Tính điểm và xếp hạng</button>
+<p id="result"></p>
+<script>
+  function tinhDiem() {
+    let diemGiuakyToan = document.getElementById('diemGiuakyToan').value;
+    let diemGiuakyLy = document.getElementById('diemGiuakyLy').value;
+    let diemGiuakyHoa = document.getElementById('diemGiuakyLy').value;
+    let diemCuoikyToan = document.getElementById('diemCuoikyToan').value;
+    let diemCuoikyLy = document.getElementById('diemCuoikyLy').value;
+    let diemCuoikyHoa = document.getElementById('diemCuoikyHoa').value;
+    let diemTongketToan = (diemGiuakyToan * 1 + (diemCuoikyToan * 2)) / 3;
+    let diemTongketLy = (diemGiuakyLy * 1 + diemCuoikyLy * 2) / 3;
+    let diemTongketHoa = (diemGiuakyHoa * 1 + diemCuoikyHoa * 2) / 3;
+    let diemTong = (diemTongketToan + diemTongketLy + diemTongketHoa) / 3
+    document.getElementById('diemTongketToan').value = diemTongketToan
+    document.getElementById('diemTongketLy').value = diemTongketLy
+    document.getElementById('diemTongketHoa').value = diemTongketHoa
+    if (diemTong <= 9) {
+      if (diemTong <= 7) {
+        if (diemTong <= 5) {
+          document.getElementById('result').innerText = "Điểm xếp loại là " + diemTong + ". Xếp loại Yếu"
+        } else {
+          document.getElementById('result').innerText = "Điểm xếp loại là " + diemTong + ". Xếp loại Khá"
+        }
+      } else {
+        document.getElementById('result').innerText = "Điểm xếp loại là " + diemTong + ". Xếp loại Giỏi"
+      }
+    } else {
+      document.getElementById('result').innerText = "Điểm xếp loại là " + diemTong + ". Xếp loại Xuất sắc"
+    }
+  }
+</script>
+</body>
+</html>
