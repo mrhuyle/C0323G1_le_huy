@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai tap may tinh</title>
+</head>
+<body>
+<input type="text" id="khungKetqua">
+<br>
+
+<table>
+  <tr>
+    <td><button type="button" onclick="so1()">1</button></td>
+    <td><button type="button" onclick="so2()">2</button></td>
+    <td><button type="button" onclick="so3()">3</button></td>
+    <td><button type="button" onclick="dauCong()">+</button></td>
+  </tr>
+  <tr>
+    <td><button type="button" onclick="so4()">4</button></td>
+    <td><button type="button" onclick="so5()">5</button></td>
+    <td><button type="button" onclick="so6()">6</button></td>
+    <td><button type="button" onclick="dauTru()">-</button></td>
+  </tr>
+  <tr>
+    <td><button type="button" onclick="so7()">7</button></td>
+    <td><button type="button" onclick="so8()">8</button></td>
+    <td><button type="button" onclick="so9()">9</button></td>
+    <td><button type="button" onclick="dauNhan()">*</button></td>
+  </tr>
+  <tr>
+    <td><button type="button" onclick="dauAC()">AC</button></td>
+    <td><button type="button" onclick="so0()">0</button></td>
+    <td><button type="button" onclick="dauBang()">=</button></td>
+    <td><button type="button" onclick="dauChia()">/</button></td>
+  </tr>
+</table>
+<script>
+  function so1() {
+    document.getElementById('khungKetqua').value += 1
+  }
+  function so2() {
+    document.getElementById('khungKetqua').value += 2
+  }
+  function so3() {
+    document.getElementById("khungKetqua").value += 3
+  }
+  function so4() {
+    document.getElementById("khungKetqua").value += 4
+  }
+  function so5() {
+    document.getElementById("khungKetqua").value += 5
+  }
+  function so6() {
+    document.getElementById("khungKetqua").value += 6
+  }
+  function so7() {
+    document.getElementById("khungKetqua").value += 7
+  }
+  function so8() {
+    document.getElementById("khungKetqua").value += 8
+  }
+  function so9() {
+    document.getElementById("khungKetqua").value += 9
+  }
+  function so0() {
+    document.getElementById("khungKetqua").value += 0
+  }
+  function dauCong() {
+    document.getElementById('khungKetqua').value += '+'
+  }
+  function dauTru() {
+    document.getElementById('khungKetqua').value += '-'
+  }
+  function dauNhan() {
+    document.getElementById('khungKetqua').value += '*'
+  }
+  function dauChia() {
+    document.getElementById('khungKetqua').value += '/'
+  }
+  function dauAC() {
+    document.getElementById('khungKetqua').value = " "
+  }
+  function dauBang() {
+    let bieuThuc = document.getElementById('khungKetqua').value
+    let tinhToan = eval(bieuThuc)
+    document.getElementById('khungKetqua').value = tinhToan
+  }
+</script>
+</body>
+</html>

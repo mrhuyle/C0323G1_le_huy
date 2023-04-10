@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau truc dieu kien loai 1 - Bai tap 1</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Number a</th>
+        <th>Number b</th>
+    </tr>
+    <tr>
+        <td><input type="number" id="numbera"></td>
+        <td><input type="number" id="numberb"></td>
+    </tr>
+</table>
+<button type="button" onclick="check()">Check</button>
+<p id="result"></p>
+<script>
+    function check() {
+        let numbera = document.getElementById('numbera').value;
+        let numberb = document.getElementById('numberb').value;
+        let result = numbera % numberb
+        if (result == 0) {
+            document.getElementById('result').innerText = 'Số ' + numbera + ' chia hết cho ' + numberb;
+        } else {
+            document.getElementById('result').innerText = 'Số ' + numbera + ' không chia hết cho ' + numberb;
+        }
+    }
+</script>
+</body>
+</html>

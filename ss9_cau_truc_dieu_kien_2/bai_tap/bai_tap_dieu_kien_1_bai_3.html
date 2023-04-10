@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau truc dieu kien loai 1 - Bai tap 3</title>
+</head>
+<body>
+<input type="number" id="number"><label for="number">Nhập số nguyên bất kỳ</label>
+<br>
+<button type="button" onclick="check()">Check</button>
+<p id="result"></p>
+<script>
+    function check() {
+        let number = +document.getElementById('number').value;
+        if (Number.isInteger(number)) {
+            if (number > 0) {
+                document.getElementById('result').innerText = 'Số nguyên ' + number + ' lớn hơn 0';
+            } else if (number < 0) {
+                document.getElementById('result').innerText = 'Số nguyên ' + number + ' nhỏ hơn 0';
+            } else {
+                document.getElementById('result').innerText = 'Số nguyên ' + number;
+            }
+        } else {
+            document.getElementById('result').innerText = 'Số ' + number + ' không phải là số nguyên';
+        }
+    }
+</script>
+</body>
+</html>

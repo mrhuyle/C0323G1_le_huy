@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau truc dieu kien loai 1 - Bai tap 2</title>
+</head>
+<body>
+<input type="number" id="age"><label for="age">Nhập số tuổi của bạn</label>
+<br>
+<button type="button" onclick="check()">Check</button>
+<p id="result"></p>
+<script>
+    function check() {
+        let age = document.getElementById('age').value;
+        if (age >= 16 && age <= 18) {
+            document.getElementById('result').innerText = 'Bạn ' + age + ' tuổi. Bạn đủ điều kiện vào học lớp 10';
+        } else {
+            document.getElementById('result').innerText = 'Bạn ' + age + ' tuổi. Bạn KHÔNG điều kiện vào học lớp 10';
+        }
+    }
+</script>
+</body>
+</html>

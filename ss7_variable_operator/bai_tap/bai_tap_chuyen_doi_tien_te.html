@@ -27,23 +27,23 @@
       </select>
     </td>
     <td>
-      <button type="button" onclick="Doitien()">Convert</button>
+      <button type="button" onclick="doiTien()">Convert</button>
     </td>
   </tr>
   </table>
 <p id="location"></p>
 <script>
-  function Doitien() {
-    let a = document.getElementById('number').value;
-    let b = document.getElementById('type1').value;
-    let c = document.getElementById('type2').value;
-    let usdvnd = a * 23000
-    let vndusd = a / 23000
-    if (b == 'USD' && c == 'VND') {
-      document.getElementById('location').innerText = a + ' USD = ' + usdvnd + ' VND'
+  function doiTien() {
+    let soTien = document.getElementById('number').value;
+    let donVi1 = document.getElementById('type1').value;
+    let donVi2 = document.getElementById('type2').value;
+    let doiUsdsangVND = soTien * 23000
+    let doiVndsangUsd = soTien / 23000
+    if (donVi1 == 'USD' && donVi2 == 'VND') {
+      document.getElementById('location').innerText = soTien + ' USD = ' + doiUsdsangVND + ' VND'
     }
-    else if (b == 'VND' && c == 'USD') {
-      document.getElementById('location').innerText = a + ' VND = ' + vndusd + ' USD'
+    else if (donVi1 == 'VND' && donVi2 == 'USD') {
+      document.getElementById('location').innerText = soTien + ' VND = ' + doiVndsangUsd + ' USD'
     }
     else {
       alert('Nhập lại kìa, hai loại tiền tệ giống nhau!!!')
