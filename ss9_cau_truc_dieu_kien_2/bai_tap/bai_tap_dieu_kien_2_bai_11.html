@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính thuế thu nhập cá nhân</title>
+</head>
+<body>
+<p>Tính thuế thu nhập cá nhân theo quy định hiện hành như sau:</p>
+<img src="https://ketoanthienung.com/pic/News/images/bang-thue-suat-thue-tncn.png" alt="Tìm ảnh">
+<br>
+<table>
+    <tr>
+        <td>Lương theo hợp đồng tính theo tháng</td>
+        <td><input type="number" id="luong"> VNĐ</td>
+    </tr>
+    <tr>
+        <td>Mức đóng bảo hiểm</td>
+        <td><input type="number" id="baoHiem"> VNĐ</td>
+    </tr>
+    <tr>
+        <td>Số người phụ thuộc</td>
+        <td><input type="number" id="nguoi"> người</td>
+    </tr>
+</table>
+<br>
+<button type="button" onclick="tinhThue()">Tính Thuế TNCN</button>
+<p id="result"></p>
+<script>
+    function tinhThue() {
+        let luong = +document.getElementById('luong').value;
+        let baoHiem = +document.getElementById('baoHiem').value;
+        let phuThuoc = +document.getElementById('nguoi').value * 4400000;
+        let thuNhap = luong - baoHiem - phuThuoc;
+        let thueBac1 = thuNhap * 0.05;
+        let thueBac2 = (thuNhap * 0.1) - 250000;
+        let thueBac3 = (thuNhap * 0.15) - 750000;
+        let thueBac4 = (thuNhap * 0.2) - 1650000;
+        let thueBac5 = (thuNhap * 0.25) - 3250000;
+        let thueBac6 = (thuNhap * 0.3) - 5850000;
+        let thueBac7 = (thuNhap * 0.35) - 9850000;
+        if (thuNhap > 80000000) {
+            document.getElementById('result').innerText = 'Thu nhập chiụ thuế là : ' + thuNhap + ' VNĐ.' + ' Số thuế phải nộp là : ' + thueBac7 + ' VNĐ.';
+        } else if (thuNhap > 52000000) {
+            document.getElementById('result').innerText = 'Thu nhập chiụ thuế là : ' + thuNhap + ' VNĐ.' + ' Số thuế phải nộp là : ' + thueBac6 + ' VNĐ.';
+        } else if (thuNhap > 32000000) {
+            document.getElementById('result').innerText = 'Thu nhập chiụ thuế là : ' + thuNhap + ' VNĐ.' + ' Số thuế phải nộp là : ' + thueBac5 + ' VNĐ.';
+        } else if (thuNhap > 18000000) {
+            document.getElementById('result').innerText = 'Thu nhập chiụ thuế là : ' + thuNhap + ' VNĐ.' + ' Số thuế phải nộp là : ' + thueBac4 + ' VNĐ.';
+        } else if (thuNhap > 10000000) {
+            document.getElementById('result').innerText = 'Thu nhập chiụ thuế là : ' + thuNhap + ' VNĐ.' + ' Số thuế phải nộp là : ' + thueBac3 + ' VNĐ.';
+        } else if (thuNhap > 5000000) {
+            document.getElementById('result').innerText = 'Thu nhập chiụ thuế là : ' + thuNhap + ' VNĐ.' + ' Số thuế phải nộp là : ' + thueBac2 + ' VNĐ.';
+        } else if (thuNhap > 0) {
+            document.getElementById('result').innerText = 'Thu nhập chiụ thuế là : ' + thuNhap + ' VNĐ.' + ' Số thuế phải nộp là : ' + thueBac1 + ' VNĐ.';
+        } else {
+            alert('Bạn không có thu nhập chịu thuế và không phải đóng ');
+        }
+    }
+
+</script>
+</body>
+</html>

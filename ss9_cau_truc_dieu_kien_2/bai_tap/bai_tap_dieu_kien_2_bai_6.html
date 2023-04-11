@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phương trình bậc 1</title>
+</head>
+<body>
+<h1>Giải phương trình bậc 1: ax + b = 0</h1>
+<p>Nhập phương trình bậc 1 có dạng:</p>
+<input type="number" id="a">x + <input type="number" id="b"> = 0
+<br>
+<br>
+<button type="button" onclick="giaiPhuongTrinh()">Giải phương trình</button>
+<p id="result"></p>
+<script>
+    function giaiPhuongTrinh() {
+        let a = +document.getElementById('a').value;
+        let b = +document.getElementById('b').value;
+        let x = (0 - b) / a;
+        if (a == 0) {
+            if (b == 0) {
+                document.getElementById('result').innerText = 'Phương trình vô có số nghiệm';
+            } else {
+                document.getElementById('result').innerText = 'Phương trình vô nghiệm';
+            }
+        } else {
+            document.getElementById('result').innerText = 'Phương trình có nghiệm x = ' + x;
+        }
+    }
+</script>
+</body>
+</html>

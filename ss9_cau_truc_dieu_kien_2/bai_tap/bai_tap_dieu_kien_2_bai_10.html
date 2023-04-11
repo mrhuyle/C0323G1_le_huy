@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giá điện</title>
+</head>
+<body>
+<pre>
+  Giá bán lẻ điện cho mỗi mức bậc thang được quy định như sau:
+  Bậc 1 (0 đến 50kWh): 1.484 VND(/kWh)
+  Bậc 2 (51 đến 100kWh): 1.533 VND (/kWh)
+  Bậc 3 (101 đến 200 kWh): 1.786 VND (/kWh)
+  Bậc 4 (201 đến 300 kWh): 2.242 VND (/kWh)
+  Bậc 5 (301 đến 400 kWh): 2.503 VND (/kWh)
+  Bậc 6 (401 kWh trở lên): 2.587 VND (/kWh)
+</pre>
+<p>Chương trình tính giá điện (chưa bao gồm VAT) như sau</p>
+<br>
+<input type="number" id="soDienTieuThu">Nhập số điện tiêu thụ (kWh)
+<br>
+<br>
+<button type="button" onclick="tinhToan()">Tính giá điện</button>
+<p id="result"></p>
+<script>
+    function tinhToan() {
+        let soDienTieuThu = +document.getElementById('soDienTieuThu').value;
+        let soTienBac1 = soDienTieuThu * 1484;
+        let soTienBac2 = soDienTieuThu * 1533;
+        let soTienBac3 = soDienTieuThu * 1786;
+        let soTienBac4 = soDienTieuThu * 2242;
+        let soTienBac5 = soDienTieuThu * 2503;
+        let soTienBac6 = soDienTieuThu * 2587;
+        if (soDienTieuThu > 400) {
+            document.getElementById('result').innerText = "Số điện tiêu thụ là: " + soDienTieuThu + ' kWh. Thuộc Bậc 6. Số tiền điện là: ' + soTienBac6 + ' VND';
+        } else if (soDienTieuThu > 300) {
+            document.getElementById('result').innerText = "Số điện tiêu thụ là: " + soDienTieuThu + ' kWh. Thuộc Bậc 5. Số tiền điện là: ' + soTienBac5 + ' VND';
+        } else if (soDienTieuThu > 200) {
+            document.getElementById('result').innerText = "Số điện tiêu thụ là: " + soDienTieuThu + ' kWh. Thuộc Bậc 4. Số tiền điện là: ' + soTienBac4 + ' VND';
+        } else if (soDienTieuThu > 100) {
+            document.getElementById('result').innerText = "Số điện tiêu thụ là: " + soDienTieuThu + ' kWh. Thuộc Bậc 3. Số tiền điện là: ' + soTienBac3 + ' VND';
+        } else if (soDienTieuThu > 50) {
+            document.getElementById('result').innerText = "Số điện tiêu thụ là: " + soDienTieuThu + ' kWh. Thuộc Bậc 2. Số tiền điện là: ' + soTienBac2 + ' VND';
+        } else if (soDienTieuThu > 0) {
+            document.getElementById('result').innerText = "Số điện tiêu thụ là: " + soDienTieuThu + ' kWh. Thuộc Bậc 1. Số tiền điện là: ' + soTienBac1 + ' VND';
+        } else {
+            alert('Nhập lại số tiền');
+        }
+    }
+</script>
+</body>
+</html>

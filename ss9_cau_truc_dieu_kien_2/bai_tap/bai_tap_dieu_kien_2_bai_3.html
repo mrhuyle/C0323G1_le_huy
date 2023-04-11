@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh dien tich hinh vuong</title>
+</head>
+<body>
+<h1>Tính diện tích hình vuông</h1>
+<p>Nhập cạnh hình vuông</p><input type="number" id="canh">(đơn vị kích thước)<br>
+<button type="button" onclick="tinhDienTich()">Tính diện tích</button>
+<p id="result"></p>
+<script>
+    function tinhDienTich() {
+        let canh = +document.getElementById('canh').value
+        let dienTich = canh * canh
+        if (canh > 0) {
+            document.getElementById('result').innerText = 'Diện tích hình vuông là : ' + dienTich + ' (đơn vị diện tích)';
+        } else {
+            alert('Nhập lại cho đúng');
+        }
+    }
+</script>
+</body>
+</html>

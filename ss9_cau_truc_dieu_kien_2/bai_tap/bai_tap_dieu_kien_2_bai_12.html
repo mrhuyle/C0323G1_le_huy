@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi vay</title>
+</head>
+<body>
+<h1>Tính lãi cộng dồn</h1>
+<table>
+    <tr>
+        <td>Nhập số tiền vay</td>
+        <td><input type="number" id="soTien"> VNĐ</td>
+    </tr>
+    <tr>
+        <td>Lãi suất hàng năm</td>
+        <td><input type="number" id="laiSuat"> %</td>
+    </tr>
+    <tr>
+        <td>Số năm vay</td>
+        <td><input type="number" id="soNam"> năm</td>
+    </tr>
+    <tr>
+        <td>Số lần ghép lãi</td>
+        <td><input type="number" id="soLanGhep"> lần trong năm</td>
+    </tr>
+</table>
+<button type="button" onclick="tinhLai()">Tính lãi</button>
+<p id="result"></p>
+<script>
+    function tinhLai() {
+        let soTien = +document.getElementById('soTien').value;
+        let soNam = +document.getElementById('soNam').value;
+        let lai = +document.getElementById('laiSuat').value / 100;
+        let soLanGhep = +document.getElementById('soLanGhep').value;
+        let tienLai = soTien * ((1 + (lai / soLanGhep)) ** (soNam * soLanGhep));
+        if (soTien > 0 && soNam > 0 && lai > 0 && soLanGhep > 0) {
+            document.getElementById('result').innerText = 'Số tiền lãi là: ' + tienLai + ' VNĐ';
+        } else {
+            alert('Nhập sai')
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số tuổi</title>
+</head>
+<body>
+<input type="number" id="age"> Nhập số tuổi
+<br>
+<br>
+<button type="button" onclick="check()">Check</button>
+<script>
+    function check() {
+        let age = +document.getElementById('age').value;
+        if (Number.isInteger(age)) {
+            if (age < 120 && age > 0) {
+                alert(age + 'là số tuổi của một người');
+            } else {
+                alert(age + ' KHÔNG là số tuổi của một người');
+            }
+        } else {
+            alert(age + ' KHÔNG là số tuổi của một người');
+        }
+    }
+</script>
+</body>
+</html>

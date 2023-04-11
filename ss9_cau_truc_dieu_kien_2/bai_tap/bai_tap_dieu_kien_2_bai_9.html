@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra 03 số thực có phải là cạnh của một tam giác</title>
+</head>
+<body>
+<h1>Kiểm tra 03 số thực có phải là cạnh của một tam giác</h1>
+<table>
+    <tr>
+        <th>Nhập cạnh a</th>
+        <th>Nhập cạnh b</th>
+        <th>Nhập cạnh c</th>
+    </tr>
+    <tr>
+        <td><input type="number" id="canha"></td>
+        <td><input type="number" id="canhb"></td>
+        <td><input type="number" id="canhc"></td>
+    </tr>
+</table>
+<button type="button" onclick="check()">Check</button>
+<p id="result"></p>
+<script>
+    function check() {
+        let canha = +document.getElementById('canha').value;
+        let canhb = +document.getElementById('canhb').value;
+        let canhc = +document.getElementById('canhc').value;
+        if (canha > 0 && canhb > 0 && canhc > 0) {
+            if ((canha + canhb) > canhc && (canhb + canhc) > canha && (canha + canhc) > canhb) {
+                document.getElementById('result').innerText = 'Cạnh a (' + canha + '), ' + 'Cạnh b (' + canhb + '), ' + 'Cạnh c (' + canhc + ') là 03 cạnh của 01 tam giác';
+            } else {
+                document.getElementById('result').innerText = 'Cạnh a (' + canha + '), ' + 'Cạnh b (' + canhb + '), ' + 'Cạnh c (' + canhc + ') KHÔNG PHẢI là 03 cạnh của 01 tam giác';
+            }
+        } else {
+            document.getElementById('result').innerText = 'Cạnh a (' + canha + '), ' + 'Cạnh b (' + canhb + '), ' + 'Cạnh c (' + canhc + ') KHÔNG PHẢI là 03 cạnh của 01 tam giác';
+        }
+    }
+</script>
+</body>
+</html>

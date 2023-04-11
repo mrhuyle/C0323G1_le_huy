@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính diện tích hình tam giác vuông</title>
+</head>
+<body>
+<h1>Tính diện tích hình tam giác vuông</h1>
+<table>
+    <tr>
+        <th><label for="canha"></label>Cạnh kề a</th>
+        <th><label for="canhb"></label>Cạnh kề b</th>
+    </tr>
+    <tr>
+        <td><input type="number" id="canha"></td>
+        <td><input type="number" id="canhb"></td>
+    </tr>
+</table>
+<button type="button" onclick="tinhDienTich()">Tính diện tích</button>
+<p id="result"></p>
+<script>
+    function tinhDienTich() {
+        let canha = +document.getElementById('canha').value;
+        let canhb = +document.getElementById('canhb').value;
+        let dienTich = (canha * canhb) / 2;
+        if (canha > 0 && canhb > 0) {
+            document.getElementById('result').innerText = 'Diện tích hình tam giác vuông là ' + dienTich + ' (đơn vị diện tích)';
+        } else {
+            alert('Cạnh hình tam giác vuông phải lớn hơn 0');
+        }
+    }
+</script>
+</body>
+</html>
