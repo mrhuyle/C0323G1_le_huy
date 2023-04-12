@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị ra 20 số trong dãy fibonacci đầu tiên.</title>
+</head>
+<body>
+<h1>Hiển thị ra 20 số trong dãy fibonacci đầu tiên.</h1>
+<p>20 số fibonacci đầu tiên là:</p>
+<p id="lietKe"></p>
+<script>
+    let n1 = 0;
+    let n2 = 1;
+    let n3 = 0;
+    let n = 1;
+    let text = ""
+    for (let count = 0; count < 20; count++) {
+        text = text + n + ' , ';
+        n = n1 + n2;
+        n3 = n;
+        n1 = n2;
+        n2 = n3;
+    }
+    document.getElementById('lietKe').innerHTML = text;
+</script>
+</body>
+</html>

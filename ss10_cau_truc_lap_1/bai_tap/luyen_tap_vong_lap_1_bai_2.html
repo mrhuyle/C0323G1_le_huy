@@ -2,8 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Điều chỉnh nhiệt độ</title>
 </head>
+<h1>Điều chỉnh nhiệt độ</h1>
+<script>
+    let nhietDo = +prompt('Nhập nhiệt độ vào đây')
+    text = 'Nhiệt độ đang là ' + nhietDo + ' độ C. Ổn định rồi'
+    while (nhietDo > 100) {
+        alert ('Yêu cầu giảm nhiệt độ');
+        nhietDo = +prompt('Nhập nhiệt độ vào đây');
+    }
+    while (nhietDo < 20) {
+        alert ('Yêu cầu tăng nhiệt độ');
+        nhietDo = +prompt('Nhập nhiệt độ vào đây');
+    }
+    if (nhietDo >= 20 && nhietDo <=100) {
+        document.write(text);
+    }
+</script>
 <body>
 
 </body>
