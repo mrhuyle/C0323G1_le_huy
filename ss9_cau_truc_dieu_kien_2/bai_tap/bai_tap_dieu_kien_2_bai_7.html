@@ -18,7 +18,7 @@
         let b = +document.getElementById('b').value;
         let c = +document.getElementById('c').value;
         let delta = (b * b) - (4 * a * c);
-        let nghiemKep = (0 - b) / (2 * a)
+        let nghiemkep = (0 - b) / (2 * a)
         let nghiemBac1 = (0 - c) / b
         let x1 = ((0 - b) + Math.sqrt(delta)) / (2 * a)
         let x2 = ((0 - b) - Math.sqrt(delta)) / (2 * a)
@@ -35,7 +35,7 @@
         } else if (delta < 0) {
             document.getElementById('result').innerText = 'Phương trình vô nghiệm';
         } else if (delta == 0) {
-            document.getElementById('result').innerText = 'Phương trình có nghiệm kép x1 = x 2 = ' + nghiemKep;
+            document.getElementById('result').innerText = 'Phương trình có nghiệm kép x1 = x 2 = ' + nghiemkep;
         } else {
             document.getElementById('result').innerText = 'Phương trình có nghiệm x1 = ' + x1 + ' và x2 = ' + x2;
         }

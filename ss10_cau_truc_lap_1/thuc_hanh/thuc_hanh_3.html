@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành while</title>
+</head>
+<body>
+<h3>Viết chương trình nhận vào một số từ hộp thoại, việc nhập kết thúc khi người dùng nhập vào giá trị -1. Mỗi giá trị nhập được sẽ được hiển thị ra và thực hiện tính tổng các giá trị đó.</h3>
+<p id="demo"></p>
+<script>
+  let num = 0;
+  let total = 0;
+  let text = ""
+  while (num != -1) {
+    num = +prompt ('Enter the number: ');
+    alert (num);
+    total = total + num
+      text += "Bạn nhập vào số " + num + '. Tổng sau khi nhập là ' + total + '<br>'
+  }
+  document.getElementById ('demo').innerHTML = text
+</script>
+</body>
+</html>

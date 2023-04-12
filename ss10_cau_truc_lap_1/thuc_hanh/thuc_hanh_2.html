@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành 2</title>
+</head>
+<body>
+<h3>Viết chương trình nhập vào một số bất kỳ lớn hơn 0. Tính tổng các phần tử từ 1 đến số vừa nhập vào.</h3>
+<p id="demo"></p>
+<script>
+  let num = prompt("Enter the number: ");
+  let total = 0
+  let i
+  for (i = 1; i <= num; i++) {
+    total = total + i
+  }
+  document.getElementById('demo').innerHTML = 'Tổng các phần tử từ 1 đến ' + num + ' là ' + total
+</script>
+</body>
+</html>

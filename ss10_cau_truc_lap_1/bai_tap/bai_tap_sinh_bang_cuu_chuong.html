@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập sinh bảng cửu chương</title>
+</head>
+<body>
+<script>
+    document.write('<table border="1">')
+    for (let hang = 1; hang < 10; hang++) {
+        document.write('<tr>')
+        for (let cot = 2; cot < 10; cot++) {
+            let ketQua = cot * hang;
+            document.write('<td>' + ' ' + cot + 'x' + hang + " = " + ketQua + '</td>');
+        }
+        document.write('</tr>')
+    }
+    document.write('</table>')
+</script>
+</body>
+</html>
