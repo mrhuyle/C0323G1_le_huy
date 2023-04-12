@@ -5,17 +5,18 @@
     <title>Bài tập sinh bảng cửu chương</title>
 </head>
 <body>
+<h1>Bảng cửu chương</h1>
 <script>
-    document.write('<table border="1">')
+    document.write('<table border="1">');
     for (let hang = 1; hang < 10; hang++) {
-        document.write('<tr>')
+        document.write('<tr>');
         for (let cot = 2; cot < 10; cot++) {
             let ketQua = cot * hang;
             document.write('<td>' + ' ' + cot + 'x' + hang + " = " + ketQua + '</td>');
         }
-        document.write('</tr>')
+        document.write('</tr>');
     }
-    document.write('</table>')
+    document.write('</table>');
 </script>
 </body>
 </html>

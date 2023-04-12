@@ -7,21 +7,23 @@
 <body>
 <h1>Bài tập tìm 20 số nguyên tố đầu tiên trong dãy số tự nhiên</h1>
 <script>
-  let n = 0
-  let soLuongSNT = 0
-  while (soLuongSNT < 20) {
-      let count = 0
-      for (let i = 1; i<=n; i++) {
-          if ((n % i) == 0 ) {
-              count++;
-          }
-      }
-      if (count == 2) {
-          soLuongSNT++
-          n++
-          document.write(n + ',')
-      } else {n++}
-  }
+    let n = 0;
+    let soLuongSNT = 0;
+    while (soLuongSNT < 20) {
+        let count = 0
+        for (let i = 1; i <= n; i++) {
+            if ((n % i) == 0) {
+                count++;
+            }
+        }
+        if (count == 2) {
+            soLuongSNT++;
+            n++;
+            document.write(n + ' , ');
+        } else {
+            n++;
+        }
+    }
 </script>
 </body>
 </html>
