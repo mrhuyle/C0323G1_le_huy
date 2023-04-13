@@ -16,7 +16,7 @@
     function giaiPhuongTrinh() {
         let a = +document.getElementById('a').value;
         let b = +document.getElementById('b').value;
-        let x = (0 - b) / a;
+        let x;
         if (a == 0) {
             if (b == 0) {
                 document.getElementById('result').innerText = 'Phương trình vô có số nghiệm';
@@ -24,6 +24,7 @@
                 document.getElementById('result').innerText = 'Phương trình vô nghiệm';
             }
         } else {
+            x = (0 - b) / a;
             document.getElementById('result').innerText = 'Phương trình có nghiệm x = ' + x;
         }
     }
