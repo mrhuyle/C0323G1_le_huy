@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ hình chữ nhật</title>
+</head>
+<body>
+<script>
+    let text = "";
+    let cao = 0;
+    let dai;
+    while (cao < 6) {
+        if (cao == 0 || cao == 5) {
+            for (dai = 1; dai <= 20; dai++) {
+                text += '*';
+            }
+            text += '<br>';
+            cao++;
+        } else {
+            for (dai = 1; dai <= 20; dai++) {
+                if (dai > 1 && dai < 20) {
+                    text += '&nbsp;&nbsp;'
+                } else {
+                    text += '*';
+                }
+            }
+            text += '<br>';
+            cao++;
+        }
+    }
+    document.write(text);
+</script>
+</body>
+</html>

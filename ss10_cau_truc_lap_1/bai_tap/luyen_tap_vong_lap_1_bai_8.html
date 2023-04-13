@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hãy thử đoán xem!</title>
+</head>
+<body>
+<button id="start" onclick="play()">Chơi</button>
+<script>
+    function play() {
+        let soGioiHan = +prompt('Nhập vào số nguyên lớn hơn 0, để tạo khoảng giới hạn cho số bạn muốn đoán: ');
+        let i = Math.floor(Math.random() * soGioiHan);
+        let soLanDoanConLai;
+        for (let count = 0; count <= 2; count++) {
+            let soDoan = +prompt('Nhập số bạn đoán');
+            if (soDoan == i) {
+                alert('Bạn đã đoán đúng');
+                break;
+            } else if (soDoan > i) {
+                soLanDoanConLai = +(2 - count);
+                alert('Số bạn đoán lớn hơn.' + ' Bạn còn ' + soLanDoanConLai + ' lần đoán');
+            } else {
+                soLanDoanConLai = +(2 - count);
+                alert('Số bạn đoán nhỏ hơn.' + ' Bạn còn ' + soLanDoanConLai + ' lần đoán');
+            }
+        }
+        alert('ENDGAME. BẤM CHƠI ĐỂ CHƠI LẠI');
+    }
+</script>
+</body>
+</html>
