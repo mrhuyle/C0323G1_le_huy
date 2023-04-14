@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập đổi định dạng thường - in hoa</title>
+</head>
+<body>
+<script>
+    const TEXT = prompt('Nhập chuỗi bất kỳ');
+    const RESULT = [];
+    const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    for (let i = 0; i < TEXT.length; i++) {
+        if (UPPER.indexOf(TEXT[i]) !== -1) {
+            RESULT.push(TEXT[i].toLowerCase());
+        } else if (LOWER.indexOf(TEXT[i]) !== -1) {
+            RESULT.push(TEXT[i].toUpperCase());
+        } else {
+            RESULT.push(TEXT[i])
+        }
+    }
+    const NEW = RESULT.join('');
+    document.write('Chuỗi bạn nhập là ' + TEXT + ' sau khi đổi ký tự hoa sang thường và ngược lại trở thành ' + NEW);
+</script>
+</body>
+</html>

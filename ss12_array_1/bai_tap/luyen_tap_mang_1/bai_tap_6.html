@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 6</title>
+</head>
+<body>
+<p>Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình tìm
+    xem V có nằm trong mảng số nguyên không? Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V
+    is not in the array".</p>
+<p id="result"></p>
+<script>
+    let arr = [];
+    let text = "";
+    let count = 0
+    let index = "";
+    while (arr.length < 10) {
+        arr.push(+prompt('Nhập 10 số nguyên đi nào'));
+    }
+    let num = +prompt('Mảng 10 số đã tạo xong. Nhập một số bất kỳ để kiểm tra có trong mảng hay không?')
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == num) {
+            text += arr[i] + ' , ';
+            index += i + ' , ';
+            count++;
+        } else {
+            text += arr[i] + ' , ';
+        }
+    }
+    if (count > 0) {
+        document.getElementById('result').innerHTML = 'Bạn đã mảng gồm các số: ' + text + ' . Sau đó bạn nhập số ' + num + ' is in the array, nằm ở vị trí ' + index;
+    } else {
+        document.getElementById('result').innerHTML = 'Bạn đã mảng gồm các số: ' + text + ' . Sau đó bạn nhập số ' + num + ' is not in the array';
+    }
+</script>
+</body>
+</html>

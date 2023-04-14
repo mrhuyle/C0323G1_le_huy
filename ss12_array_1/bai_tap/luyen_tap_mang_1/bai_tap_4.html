@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập 4</title>
+</head>
+<body>
+<p>Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.</p>
+<p id="result"></p>
+<script>
+    let arr = [];
+    let reverseArr = [];
+    while (arr.length < 10) {
+        arr.push(+prompt('Nhập 10 số nguyên đi nào'));
+    }
+    for (let i = 0; i < arr.length; i++) {
+        reverseArr.unshift(arr[i]);
+    }
+    document.getElementById('result').innerHTML = 'Bạn đã nhập mảng ' + arr + '.Mảng đảo ngược là ' + reverseArr;
+</script>
+</body>
+</html>

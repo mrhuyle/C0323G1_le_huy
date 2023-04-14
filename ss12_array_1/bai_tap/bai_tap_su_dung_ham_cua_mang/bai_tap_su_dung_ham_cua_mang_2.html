@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập chèn ký tự số </title>
+</head>
+<body>
+<script>
+    const NUMBER = prompt('Nhập vào dãy số bất kỳ');
+    const STR = NUMBER.toString();
+    const RESULT = [STR[0]];
+    for (let i = 0; i < STR.length; i++) {
+        if (STR[(i-1)]%2==0 && STR[i]%2==0) {
+            RESULT.push('-'+ STR[i]);
+        } else {
+            RESULT.push(STR[i]);
+        }
+    }
+    console.log(RESULT.join(''));
+</script>
+</body>
+</html>
