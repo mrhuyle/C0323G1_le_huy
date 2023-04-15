@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bài tập 6</title>
+    <title>Bài tập 7</title>
 </head>
 <body>
-<p>Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình tìm
-    xem V có nằm trong mảng số nguyên không? Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V
-    is not in the array".</p>
+<p>Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình
+    kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng</p>
 <p id="result"></p>
 <script>
     let arr = [];
+    let newArr = [];
     let text = "";
-    let count = 0
     let index = "";
+    let count = 0
     while (arr.length < 10) {
         arr.push(+prompt('Nhập 10 số nguyên đi nào'));
     }
@@ -25,10 +25,11 @@
             count++;
         } else {
             text += arr[i] + ' , ';
+            newArr.push(arr[i]);
         }
     }
     if (count > 0) {
-        document.getElementById('result').innerHTML = 'Bạn đã mảng gồm các số: ' + text + ' . Sau đó bạn nhập số ' + num + ' CÓ trong mảng, nằm ở vị trí ' + index;
+        document.getElementById('result').innerHTML = 'Bạn đã mảng gồm các số: ' + text + ' . Sau đó bạn nhập số ' + num + ' CÓ trong mảng, nằm ở vị trí ' + index + '. Sau khi loại bỏ giá trị đó, mảng mới là ' + newArr;
     } else {
         document.getElementById('result').innerHTML = 'Bạn đã mảng gồm các số: ' + text + ' . Sau đó bạn nhập số ' + num + ' KHÔNG có trong mảng';
     }
