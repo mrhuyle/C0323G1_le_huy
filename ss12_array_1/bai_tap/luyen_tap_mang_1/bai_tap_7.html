@@ -11,27 +11,25 @@
 <script>
     let arr = [];
     let newArr = [];
-    let text = "";
     let index = "";
-    let count = 0
+    let count = 0;
     while (arr.length < 10) {
         arr.push(+prompt('Nhập 10 số nguyên đi nào'));
     }
+    let text = arr.toString();
     let num = +prompt('Mảng 10 số đã tạo xong. Nhập một số bất kỳ để kiểm tra có trong mảng hay không?');
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] == num) {
-            text += arr[i] + ' , ';
             index += i + ' , ';
             count++;
         } else {
-            text += arr[i] + ' , ';
             newArr.push(arr[i]);
         }
     }
     if (count > 0) {
-        document.getElementById('result').innerHTML = 'Bạn đã mảng gồm các số: ' + text + ' . Sau đó bạn nhập số ' + num + ' CÓ trong mảng, nằm ở vị trí ' + index + '. Sau khi loại bỏ giá trị đó, mảng mới là ' + newArr;
+        document.getElementById('result').innerHTML = 'Bạn đã nhập mảng gồm các số: ' + text + ' . Sau đó bạn nhập số ' + num + ' CÓ trong mảng, nằm ở vị trí ' + index + '. Sau khi loại bỏ giá trị đó, mảng mới là ' + newArr;
     } else {
-        document.getElementById('result').innerHTML = 'Bạn đã mảng gồm các số: ' + text + ' . Sau đó bạn nhập số ' + num + ' KHÔNG có trong mảng';
+        document.getElementById('result').innerHTML = 'Bạn đã nhập mảng gồm các số: ' + text + ' . Sau đó bạn nhập số ' + num + ' KHÔNG có trong mảng';
     }
 </script>
 </body>

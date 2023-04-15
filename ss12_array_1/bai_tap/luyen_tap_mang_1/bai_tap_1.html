@@ -11,19 +11,16 @@
 <script>
     let arr = [];
     let count = 0;
-    let text = "";
     while (arr.length < 10) {
         arr.push(+prompt('Nhập 10 số nguyên'));
     }
+    let text = arr.toString();
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] > 10) {
             count++;
-            text += arr[i] + ' , ';
-        } else {
-            text += arr[i] + ' , ';
         }
     }
-    document.getElementById('result').innerHTML = 'Bạn đã nhập các số: ' + text + ' .Trong đó có ' + count + ' số lớn hơn 10.';
+    document.getElementById('result').innerHTML = 'Bạn đã nhập các số: ' + text +' .Trong đó có ' + count + ' số lớn hơn 10.';
 </script>
 </body>
 </html>

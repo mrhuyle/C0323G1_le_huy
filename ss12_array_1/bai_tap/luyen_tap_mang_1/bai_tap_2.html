@@ -10,18 +10,15 @@
 <p id="result"></p>
 <script>
     let arr = [];
-    let text = "";
     let index = "";
     while (arr.length < 10) {
         arr.push(+prompt('Nhập 10 số nguyên đi nào'));
     }
+    let text = arr.toString();
     let max = arr[0];
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] > max) {
             max = arr[i];
-            text += arr[i] + ' , ';
-        } else {
-            text += arr[i] + ' , ';
         }
     }
     for (let i = 0; i < arr.length; i++) {

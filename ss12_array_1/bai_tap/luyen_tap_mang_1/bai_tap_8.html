@@ -9,22 +9,19 @@
     dần và hiển thị ra mảng đã được sắp xếp.</p>
 <p id="result"></p>
 <script>
-    let arr = ["1", "2", "3"];
-    let newArr = []
-    let text = "";
+    let arr = [];
+    let newArr = [];
     let countMax = 0;
-    // while (arr.length < 10) {
-    //     arr.push(+prompt('Nhập 10 số nguyên đi nào'));
-    // }
+    while (arr.length < 10) {
+        arr.push(+prompt('Nhập 10 số nguyên đi nào'));
+    }
+    let arrText = arr.toString()
     let max = arr[0];
-    let min = arr[0]
+    let min = arr[0];
     for (let i = 0; i < arr.length; i++) {
         for (let i = 0; i < arr.length; i++) {
-            if (arr[i] > max) {
+            if (arr[i] > max && arr[i] !== 'x') {
                 max = arr[i];
-                text += arr[i] + ' , ';
-            } else {
-                text += arr[i] + ' , ';
             }
         }
         for (let i = 0; i < arr.length; i++) {
@@ -38,19 +35,17 @@
             }
         }
         for (let i = 0; i < countMax; i++) {
-            newArr.push(max)
+            newArr.push(max);
         }
         for (let i = 0; i < arr.length; i++) {
             if (arr[i] == max) {
                 arr[i] = "x";
             }
         }
-        max = min
+        countMax = 0;
+        max = min;
     }
-    console.log(arr)
-    console.log(min)
-    console.log(max)
-    console.log(newArr)
+    document.getElementById('result').innerHTML = 'Dãy ban đầu là ' + arrText + '<br>' + 'Dãy xếp từ lớn tới nhỏ là ' + newArr;
 </script>
 </body>
 </html>

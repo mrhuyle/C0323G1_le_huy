@@ -9,19 +9,16 @@
 <p id="result"></p>
 <script>
     let arr = [];
-    let text = "";
     let count = 0;
     let index = "";
     while (arr.length < 10) {
         arr.push(+prompt('Nhập 10 số nguyên đi nào'));
     }
+    let text = arr.toString();
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] < 0) {
-            text += arr[i] + ' , ';
             count++;
             index += i + ' , '
-        } else {
-            text += arr[i] + ' , ';
         }
     }
     document.getElementById('result').innerHTML = 'Bạn đã nhập các số: ' + text + ' .Trong đó có ' + count + ' số nguyên âm, nằm ở vị trí ' + index;

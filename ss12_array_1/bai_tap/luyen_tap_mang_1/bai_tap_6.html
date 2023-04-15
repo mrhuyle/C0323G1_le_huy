@@ -11,20 +11,17 @@
 <p id="result"></p>
 <script>
     let arr = [];
-    let text = "";
-    let count = 0
+    let count = 0;
     let index = "";
     while (arr.length < 10) {
         arr.push(+prompt('Nhập 10 số nguyên đi nào'));
     }
+    let text = arr.toString();
     let num = +prompt('Mảng 10 số đã tạo xong. Nhập một số bất kỳ để kiểm tra có trong mảng hay không?');
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] == num) {
-            text += arr[i] + ' , ';
             index += i + ' , ';
             count++;
-        } else {
-            text += arr[i] + ' , ';
         }
     }
     if (count > 0) {
