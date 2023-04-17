@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 1 - Bài 9</title>
+</head>
+<body>
+<p>Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi là mảng a và b. Mảng c là một mảng được khai
+    báo gồm 20 phần tử số nguyên. Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c. Hiển thị mảng
+    c.</p>
+<p id="result"></p>
+<script>
+    let arrayA = [];
+    let arrayB = [];
+    let arrayC = new Array(20);
+    while (arrayA.length < 10) {
+        arrayA.push(+prompt('Nhập phần tử mảng a'));
+    }
+    while (arrayB.length < 10) {
+        arrayB.push(+prompt('Nhập phần tử mảng b'));
+    }
+    arrayC = arrayA.concat(arrayB);
+    document.getElementById('result').innerHTML = "Mảng a: " + arrayA + '<br>' + 'Mảng b: ' + arrayB + '<br>' + 'Mảng c: ' + arrayC;
+</script>
+</body>
+</html>
