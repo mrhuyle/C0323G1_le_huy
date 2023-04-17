@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng 2 - Bài 4</title>
+</head>
+<body>
+<p>Viết một chương trình để đếm số từ trong một chuỗi</p>
+<p id="result"></p>
+<script>
+    let str = prompt('Nhập vào chuỗi bất kỳ');
+    let arr = str.split("");
+    const TEXT = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    let count = 0;
+    for (let i in arr) {
+        if (TEXT.indexOf(arr[i]) !== -1) {
+            count++;
+        }
+    }
+    console.log(arr)
+    document.getElementById('result').innerHTML = "Chuỗi nhập vào: " + str + ' . Số ký tự chữ là: ' + count;
+</script>
+</body>
+</html>
