@@ -10,10 +10,21 @@
 <script>
     let firstStr = prompt('Nhập vào chuỗi THỨ NHẤT bất kỳ');
     let secondStr = prompt('Nhập vào chuỗi THỨ HAI bất kỳ');
-    if (firstStr === secondStr) {
-        document.getElementById('result').innerHTML = "2 chuỗi giống hệt nhau";
-    } else {
+    let firstArr = firstStr.split('');
+    let secondArr = secondStr.split('');
+    let count = 0
+    if (firstStr.length != secondStr.length) {
         document.getElementById('result').innerHTML = "2 chuỗi khác nhau";
+    }
+    for (let i = 0; i < firstArr.length; i++) {
+        if (firstArr[i] !== secondArr[i]) {
+            count++
+        }
+    }
+    if (count > 0) {
+        document.getElementById('result').innerHTML = "2 chuỗi khác nhau";
+    } else {
+        document.getElementById('result').innerHTML = "2 chuỗi giống nhau";
     }
 </script>
 </body>

@@ -15,15 +15,11 @@
     }
     let text = arr.toString();
     for (let i = 0; i < arr.length; i++) {
-        arr[i] = arr[i].split('');
-        for (let j = 0; j < arr[i].length; j++) {
-            if (arr[i][j] == "-") {
-                arr[i][j] = '_';
-            }
+        if (arr[i] == '-') {
+            arr[i] = '_';
         }
-        arr[i] = arr[i].join('');
     }
-    document.getElementById('result').innerHTML = 'Mảng nhập vào: ' + text + 'Mảng sau khi thay ký tự - bằng _: ' + arr
+    document.getElementById('result').innerHTML = 'Mảng nhập vào: ' + text + 'Mảng sau khi thay ký tự - bằng _: ' + arr;
 </script>
 </body>
 </html>
