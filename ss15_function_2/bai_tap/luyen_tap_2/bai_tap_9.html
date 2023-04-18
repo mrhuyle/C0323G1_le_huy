@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập 2 - bài 8</title>
+</head>
+<body>
+<script>
+    let length = +prompt('Nhập vào chiều dài mảng');
+    let arr = new Array(length);
+    checkArr(arr);
+    console.log(arr);
+
+    function checkArr(arr) {
+        for (let i = 0; i < length; i++) {
+            arr.push(prompt('Nhập phần tử ký tự'));
+        }
+        let text = prompt('Đã tạo mảng XONG. Nhập một ký tự bất kỳ');
+        let index = 0;
+        for (let i = 0; i < arr.length ; i++) {
+            if (arr[i] === text) {
+                index++;
+            }
+        }
+        if (index>0) {
+            return alert('Phần tử ' + text + ' xuất hiện ' + index + ' lần');
+        } else {
+            return alert(-1);
+        }
+    }
+</script>
+</body>
+</html>

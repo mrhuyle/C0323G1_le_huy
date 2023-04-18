@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập 2 - bài 8</title>
+</head>
+<body>
+<script>
+    let length = +prompt('Nhập vào chiều dài mảng');
+    let arr = new Array(length);
+    reverseArr(arr);
+    console.log(arr);
+
+    function reverseArr(arr) {
+        for (let i = 0; i < length; i++) {
+            arr.push(+prompt('Nhập phần tử số nguyên'));
+        }
+        arr.reverse();
+    }
+</script>
+</body>
+</html>

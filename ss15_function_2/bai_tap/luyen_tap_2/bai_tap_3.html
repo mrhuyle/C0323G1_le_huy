@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập 2 - Bài 3</title>
+</head>
+<body>
+<script>
+    function tinhGiaiThua(number) {
+        let result = 1
+        for (let i = 1; i <= number; i++) {
+            result = result * i;
+        }
+        return alert('Giai thừa của ' + number + ' là ' + result);
+    }
+
+    let number = +prompt('Nhập số muốn tính giai thừa');
+    tinhGiaiThua(number);
+</script>
+</body>
+</html>

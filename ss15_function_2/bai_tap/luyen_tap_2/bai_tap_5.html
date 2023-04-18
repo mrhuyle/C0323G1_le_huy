@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập 2 - Bài 5</title>
+</head>
+<body>
+<script>
+    function displayMin(a, b, c) {
+        let arr = new Array(3);
+        arr[0] = a;
+        arr[1] = b;
+        arr[2] = c;
+        let min = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < min && arr[i] % 1 == 0) {
+                min = arr[i];
+            }
+        }
+        return alert('Số bé nhất là ' + min);
+    }
+
+    let a = +prompt('Nhập vào số nguyên thứ nhất');
+    let b = +prompt('Nhập vào số nguyên thứ hai');
+    let c = +prompt('Nhập vào số nguyên thứ ba');
+    displayMin(a,b,c);
+</script>
+</body>
+</html>

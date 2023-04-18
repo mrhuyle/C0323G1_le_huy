@@ -6,10 +6,6 @@
 </head>
 <body>
 <script>
-    let a = +prompt('Nhập vào số a');
-    let b = +prompt('Nhập vào số b');
-    display(a, b)
-
     function display(a, b) {
         if (a > b) {
             return alert('Số ' + a + ' lớn hơn số ' + b);
@@ -18,6 +14,11 @@
             return alert('Tổng của chúng là ' + sum);
         }
     }
+
+    let a = +prompt('Nhập vào số a');
+    let b = +prompt('Nhập vào số b');
+    display(a, b);
+
 </script>
 </body>
 </html>
