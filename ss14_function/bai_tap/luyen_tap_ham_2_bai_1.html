@@ -6,12 +6,12 @@
 </head>
 <body>
 <script>
-  tinhBinhPhuong(+prompt('Nhập số cần tính bình phương'));
+    function tinhBinhPhuong(a) {
+        let b = a * a;
+        alert('Bình phương của ' + a + ' bằng ' + b);
+    }
 
-  function tinhBinhPhuong(a) {
-    let b = a * a;
-    alert('Bình phương của ' + a + ' bằng ' + b);
-  }
+    tinhBinhPhuong(+prompt('Nhập số cần tính bình phương'));
 </script>
 </body>
 </html>
