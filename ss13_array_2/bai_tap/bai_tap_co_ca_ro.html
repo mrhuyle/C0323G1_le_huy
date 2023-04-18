@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập cờ ra rô</title>
+</head>
+<style>
+    td {
+        width: 25px;
+        height: 25px;
+        border: 1px solid black;
+        text-align: center;
+    }
+</style>
+<body>
+<p id="table"></p>
+<script>
+    let arr = new Array(10)
+    for (let i = 0; i < 10; i++) {
+        arr[i] = new Array(10);
+        for (let j = 0; j < 10; j++) {
+            arr[i][j] = "";
+        }
+    }
+
+    displayTable()
+    let turn = true;
+
+    function displayTable() {
+        let textTable = ""
+        textTable += '<table>'
+        for (let i = 0; i < 10; i++) {
+            textTable += '<tr>';
+            for (let j = 0; j < 10; j++) {
+                textTable += '<td id="' + i + j + '" onclick="tick(' + i + ',' + j + ')">' + arr[i][j] + '</td>';
+            }
+            textTable += '</tr>';
+        }
+        textTable += '</table>';
+        document.getElementById('table').innerHTML = textTable;
+    }
+
+    function tick(i, j) {
+        if (turn == true && checkData(i, j)) {
+            arr[i][j] = "X";
+            turn = false;
+            displayTable();
+            checkX(i, j);
+
+        } else if (turn == false && checkData(i, j)) {
+            arr[i][j] = "O";
+            turn = true;
+            displayTable();
+            checkO(i, j);
+        } else {
+            alert("Ô này đã có người nhập");
+        }
+    }
+
+    function checkData(i, j) {
+        if (arr[i][j] == "X" || arr[i][j] == "O") {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function checkX(i, j) {
+        if (arr[i][j] == arr[i][j + 1] && arr[i][j + 1] == arr[i][j + 2]) {
+            alert("X thắng");
+        } else if (arr[i][j - 1] == arr[i][j] && arr[i][j] == arr[i][j + 1]) {
+            alert("X thắng");
+        } else if (arr[i][j - 2] == arr[i][j - 1] && arr[i][j - 1] == arr[i][j]) {
+            alert("X thắng");
+        } else if (arr[i][j] == arr[i + 1][j] && arr[i + 1][j] == arr[i + 2][j]) {
+            alert("X thắng");
+        } else if (arr[i - 1][j] == arr[i][j] && arr[i][j] == arr[i + 1][j]) {
+            alert("X thắng");
+        } else if (arr[i - 2][j] == arr[i - 1][j] && arr[i - 1][j] == arr[i][j]) {
+            alert("X thắng");
+        } else if (arr[i][j] == arr[i + 1][j + 1] && arr[i + 1][j + 1] == arr[i + 2][j + 2]) {
+            alert("X thắng");
+        } else if (arr[i - 1][j - 1] == arr[i][j] && arr[i][j] == arr[i + 1][j + 1]) {
+            alert("X thắng");
+        } else if (arr[i - 2][j - 2] == arr[i - 1][j - 1] && arr[i - 1][j - 1] == arr[i][j]) {
+            alert("X thắng");
+        } else if (arr[i][j] == arr[i - 1][j + 1] && arr[i - 1][j + 1] == arr[i - 2][j + 2]) {
+            alert("X thắng");
+        } else if (arr[i][j] == arr[i - 1][j + 1] && arr[i][j] == arr[i + 1][j - 1]) {
+            alert("X thắng");
+        } else if (arr[i][j] == arr[i + 1][j - 1] && arr[i + 1][j - 1] == arr[i + 2][j - 2]) {
+            alert("X thắng");
+        }
+    }
+
+    function checkO(i, j) {
+        if (arr[i][j] == arr[i][j + 1] && arr[i][j + 1] == arr[i][j + 2]) {
+            alert("O thắng");
+        } else if (arr[i][j - 1] == arr[i][j] && arr[i][j] == arr[i][j + 1]) {
+            alert("O thắng");
+        } else if (arr[i][j - 2] == arr[i][j - 1] && arr[i][j - 1] == arr[i][j]) {
+            alert("O thắng");
+        } else if (arr[i][j] == arr[i + 1][j] && arr[i + 1][j] == arr[i + 2][j]) {
+            alert("O thắng");
+        } else if (arr[i - 1][j] == arr[i][j] && arr[i][j] == arr[i + 1][j]) {
+            alert("O thắng");
+        } else if (arr[i - 2][j] == arr[i - 1][j] && arr[i - 1][j] == arr[i][j]) {
+            alert("O thắng");
+        } else if (arr[i][j] == arr[i + 1][j + 1] && arr[i + 1][j + 1] == arr[i + 2][j + 2]) {
+            alert("O thắng");
+        } else if (arr[i - 1][j - 1] == arr[i][j] && arr[i][j] == arr[i + 1][j + 1]) {
+            alert("O thắng");
+        } else if (arr[i - 2][j - 2] == arr[i - 1][j - 1] && arr[i - 1][j - 1] == arr[i][j]) {
+            alert("O thắng");
+        } else if (arr[i][j] == arr[i - 1][j + 1] && arr[i - 1][j + 1] == arr[i - 2][j + 2]) {
+            alert("O thắng");
+        } else if (arr[i][j] == arr[i - 1][j + 1] && arr[i][j] == arr[i + 1][j - 1]) {
+            alert("O thắng");
+        } else if (arr[i][j] == arr[i + 1][j - 1] && arr[i + 1][j - 1] == arr[i + 2][j - 2]) {
+            alert("O thắng");
+        }
+    }
+</script>
+</body>
+</html>
