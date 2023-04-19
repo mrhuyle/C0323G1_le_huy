@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập quản lý sản phẩm</title>
+</head>
+<style>
+    tr, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+    }
+</style>
+<body>
+<input type="text" id="product">
+<button id="add" onclick="addProduct()">Add</button>
+<p id="result"></p>
+<script>
+    let arr = ['Macbook', 'Lenovo', 'Acer', 'Dell'];
+    displayTable();
+
+    function displayTable() {
+        let tableString = '<table><tr><th>STT</th><th colspan="2">'+arr.length+' product</th></tr>';
+        for (let i = 0; i < arr.length; i++) {
+            tableString += '<tr><td>' + arr[i] + '</td><td><button>Edit</button></td><td><button>Delete</button></td></tr>';
+        }
+        document.getElementById('result').innerHTML = tableString;
+    }
+    function addProduct() {
+        let product = document.getElementById('product').value;
+        arr.push(product);
+        displayTable()
+    }
+</script>
+</body>
+</html>

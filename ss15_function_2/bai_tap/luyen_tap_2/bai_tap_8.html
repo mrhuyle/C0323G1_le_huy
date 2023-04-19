@@ -7,15 +7,20 @@
 <body>
 <script>
     let length = +prompt('Nhập vào chiều dài mảng');
-    let arr = new Array(length);
-    reverseArr(arr);
+    let arr = [];
+    reverseArr(arr)
     console.log(arr);
 
     function reverseArr(arr) {
         for (let i = 0; i < length; i++) {
             arr.push(+prompt('Nhập phần tử số nguyên'));
         }
-        arr.reverse();
+        for (let i = 0; i < length / 2; i++) {
+            let temp = arr[i];
+            arr[i] = arr[length - 1 - i];
+            arr[length - 1 - i] = temp;
+        }
+        return arr;
     }
 </script>
 </body>
