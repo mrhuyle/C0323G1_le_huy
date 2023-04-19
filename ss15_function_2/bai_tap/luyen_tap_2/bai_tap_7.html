@@ -8,16 +8,19 @@
 <script>
     let a = +prompt('Nhập vào số nguyên thứ nhất');
     let b = +prompt('Nhập vào số nguyên thứ hai');
-    let arr = [];
-    checkNumber(a, b);
-    console.log(arr);
+    let arr = new Array(2);
+    arr[0] = a;
+    arr[1] = b;
+    console.log(a, b);
+    checkNumber(arr[0], arr[1]);
+    console.log(a, b);
 
-    function checkNumber(a, b) {
-        arr.push(a);
-        arr.push(b);
-        arr.reverse();
+    function checkNumber(c, d) {
+        arr[0] = d;
+        arr[1] = c;
+        a = arr[0];
+        b = arr[1];
     }
-
 </script>
 </body>
 </html>
