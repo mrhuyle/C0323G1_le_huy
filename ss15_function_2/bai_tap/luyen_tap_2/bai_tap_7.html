@@ -6,21 +6,18 @@
 </head>
 <body>
 <script>
-    let a = +prompt('Nhập vào số nguyên thứ nhất');
-    let b = +prompt('Nhập vào số nguyên thứ hai');
-    let arr = new Array(2);
-    arr[0] = a;
-    arr[1] = b;
-    console.log(a, b);
-    swapNumber(arr[0], arr[1]);
-    console.log(a, b);
+    let a = +prompt('Nhập số thứ nhất');
+    let b = +prompt('Nhập số thứ hai');
 
     function swapNumber(c, d) {
-        arr[0] = d;
-        arr[1] = c;
-        a = arr[0];
-        b = arr[1];
+        let arr = [c, d];
+        a = arr[1]
+        b = arr[0]
     }
+
+    console.log(a, b);
+    swapNumber(a, b);
+    console.log(a, b);
 </script>
 </body>
 </html>
