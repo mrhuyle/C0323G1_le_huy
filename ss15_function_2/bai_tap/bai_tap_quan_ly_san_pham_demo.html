@@ -32,7 +32,16 @@
     function addProduct() {
         if (addCondition == true) {
             let product = document.getElementById('product').value;
-            if (product != '') {
+            productArrCheck = product.split('')
+            let checkOfEditAdd = true
+            for (let i = 0; i < productArrCheck.length; i++) {
+                if (productArrCheck[i] == ' ') {
+                    checkOfEditAdd = false;
+                } else {
+                    checkOfEditAdd = true;
+                }
+            }
+            if (checkOfEditAdd && product != '') {
                 arr.push(product);
                 document.getElementById('product').value = ''
                 displayTable();
