@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập thêm - Bài 1</title>
+</head>
+<body>
+<p id="input"></p>
+<button onclick="checkInput()">Check</button>
+<p id="output"></p>
+<script>
+    let n = +prompt('Nhập n là độ dài mảng số');
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt('Nhập vào một số là phần tử của mảng');
+    }
+    document.getElementById('input').innerHTML = 'Input: ' + arr;
+
+    function checkInput() {
+        let checkMod = true;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % i == 0) {
+                checkMod = true;
+            } else {
+                checkMod = false;
+            }
+        }
+        if (checkMod) {
+            document.getElementById('output').innerHTML = 'Output: OK';
+        } else {
+            document.getElementById('output').innerHTML = 'Output: NO';
+        }
+    }
+</script>
+</body>
+</html>
