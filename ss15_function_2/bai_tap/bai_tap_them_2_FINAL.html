@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập thêm - Bài 2</title>
+</head>
+<body>
+<p id="input"></p>
+<p id="output"></p>
+<script>
+    let str = prompt('Nhập một chuỗi bất kỳ');
+    find(str)
+
+    function checkString(string) {
+        let arr = string.split('');
+        let check = true;
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == '/') {
+                count++;
+            }
+        }
+        if (count != 1) {
+            check = false;
+        } else {
+            count = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (isNaN(arr[i])) {
+                    count++;
+                }
+            }
+            if (count > 1) {
+                check = false;
+            } else {
+                check = true;
+            }
+        }
+        return check;
+    }
+
+    function checkFraction(string) {
+        let arr = string.split('/');
+        let check = true;
+        let tuSo = arr[0].trim();
+        let mauSo = arr[1].trim();
+        if (tuSo == '') {
+            check = false;
+        } else if (mauSo == 0 || mauSo == '') {
+            check = false;
+        } else {
+            check = true;
+        }
+        return check;
+    }
+
+    function find(string) {
+        if (checkString(string) && checkFraction(string)) {
+            let newArr = string.split('/');
+            let uocChungMax = timUocChungMax(newArr[0], newArr[1]);
+            if (uocChungMax != 0) {
+                let tuSo;
+                let mauSo;
+                tuSo = newArr[0] / uocChungMax;
+                mauSo = newArr[1] / uocChungMax;
+                document.getElementById('input').innerHTML = 'Input: ' + string;
+                document.getElementById('output').innerHTML = 'Output: ' + tuSo + '/' + mauSo;
+            } else {
+                document.getElementById('input').innerHTML = 'Input: ' + string;
+                document.getElementById('output').innerHTML = 'Output: ' + string;
+            }
+
+        } else {
+            document.getElementById('input').innerHTML = 'Input: ' + string;
+            document.getElementById('output').innerHTML = 'Output: Không phải là phân số';
+        }
+    }
+
+    function timUocChungMax(a, b) {
+        let arrUocA = [];
+        let arrUocB = [];
+        let uocChungMax = 0;
+        for (let i = 2; i <= a; i++) {
+            if (a % i == 0) {
+                arrUocA.push(i);
+            }
+        }
+        for (let i = 2; i <= b; i++) {
+            if (b % i == 0) {
+                arrUocB.push(i);
+            }
+        }
+        for (let i = 0; i < arrUocA.length; i++) {
+            for (let j = 0; j < arrUocB.length; j++) {
+                if (arrUocA[i] == arrUocB[j] && arrUocA[i] > uocChungMax) {
+                    uocChungMax = arrUocA[i];
+                }
+            }
+        }
+        return uocChungMax;
+    }
+</script>
+</body>
+</html>
