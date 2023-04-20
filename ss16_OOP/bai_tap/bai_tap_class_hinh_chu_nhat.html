@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Hình Chữ Nhật</title>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script>
+    class Rectangle {
+        constructor(a, b) {
+            this.width = a;
+            this.height = b;
+        }
+
+        calArea() {
+            return this.width * this.height;
+        }
+
+        calPerimeter() {
+            return ((this.width + this.height) * 2);
+        }
+
+        draw() {
+            let image = document.getElementById('canvas');
+            if (image.getContext) {
+                let ctx = image.getContext('2d');
+                ctx.fillStyle = "#ffccb6";
+                ctx.fillRect(1, 1, this.width, this.height);
+            }
+        }
+    }
+
+    let rectangle = new Rectangle(200, 100);
+    console.log(rectangle.calArea());
+    console.log(rectangle.calPerimeter);
+    rectangle.draw();
+    console.log(rectangle);
+</script>
+</body>
+</html>

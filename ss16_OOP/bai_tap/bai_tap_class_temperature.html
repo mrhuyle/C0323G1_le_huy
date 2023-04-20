@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Temperature</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(c) {
+            if (c < -273) {
+                alert('Nhập sai định dạng nhiệt độ');
+            } else {
+                this.tempC = c;
+            }
+        }
+
+        convertF() {
+            return ((9 / 5) * this.tempC) + 32;
+        }
+
+        convertK() {
+            return this.tempC + 273.15;
+        }
+
+        show() {
+            return this.tempC;
+        }
+    }
+
+    let temp = new Temperature(+prompt('Nhập nhiệt độ C'));
+    console.log(temp);
+    document.write('Độ C: ' + temp.show() + ' Độ F: ' + temp.convertF() + ' Độ K : ' + temp.convertK())
+</script>
+</body>
+</html>
