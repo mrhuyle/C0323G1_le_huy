@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập class phone</title>
+</head>
+<body>
+<script>
+    class Phone {
+        constructor(pin) {
+            this.pin = pin;
+            this.typingMes = [];
+            this.inboxMes = [];
+            this.sentMes = [];
+            this.status = 'ON';
+        }
+
+        checkOnOff() {
+            return alert(this.status);
+            this.pin--;
+        }
+
+        onOff() {
+            if (this.status == 'ON') {
+                return this.status == 'OFF';
+            } else if (this.status == 'OFF') {
+                return this.status == 'ON';
+            }
+        }
+
+        charge() {
+            if (this.pin >= 0 && this.status == 'ON') {
+                return this.pin = 100;
+            }
+        }
+
+        typingMessage() {
+            if (this.pin > 0 && this.status == 'ON') {
+                return this.typingMes.push(prompt('Soạn tin nhắn'));
+                this.pin--;
+            } else {
+                alert(this.pin + this.status);
+            }
+        }
+
+        sendMessage(i) {
+            if (this.pin > 0 && this.status == 'ON') {
+                return this.sentMes[i] = this.typingMes[i];
+                this.pin--;
+            } else {
+                alert(this.pin + this.status);
+            }
+
+        }
+
+        receiveMessage(message) {
+            if (this.pin > 0 && this.status == 'ON') {
+                return this.inboxMes.push(message);
+                this.pin--;
+            } else {
+                alert(this.pin + this.status);
+            }
+        }
+
+        showInboxMes(i) {
+            if (this.pin > 0 && this.status == 'ON') {
+                return this.inboxMes[i];
+                this.pin--;
+            } else {
+                alert(this.pin + this.status);
+            }
+        }
+
+        showSentMes(i) {
+            if (this.pin > 0 && this.status == 'ON') {
+                return this.sentMes[i];
+                this.pin--;
+            } else {
+                alert(this.pin + this.status);
+            }
+        }
+    }
+
+    let nokia = new Phone(100);
+    let iphone = new Phone(100);
+    console.log(Phone)
+    console.log(nokia)
+    console.log(iphone)
+
+    // nokia.checkOnOff()
+    // console.log(nokia.pin)
+    // console.log(nokia.status)
+    // nokia.typingMessage();
+    // nokia.sendMessage(1);
+    // iphone.receiveMessage(nokia.sendMessage(1));
+    // console.log(nokia);
+    // console.log(iphone);
+</script>
+</body>
+</html>

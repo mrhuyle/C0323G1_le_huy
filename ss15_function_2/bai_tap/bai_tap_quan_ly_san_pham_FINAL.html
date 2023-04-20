@@ -14,6 +14,7 @@
 <body>
 <input type="text" id="product">
 <button id="add" onclick="addProduct()">Add</button>
+<button id="search" onclick="search()">Search</button>
 <p id="result"></p>
 <script>
     let arr = ['Macbook', 'Lenovo', 'Acer', 'Dell'];
@@ -88,6 +89,20 @@
         alert('Sửa tên sản phẩm tại ô input cần edit và bấm Add');
         document.getElementById('product').value = arr[i];
         indexOfEditAdd = i;
+    }
+
+    function search() {
+        let input = document.getElementById('product').value;
+        let check = false;
+        let index;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == input) {
+                check = true;
+                index = i;
+                arr = [arr[i]]
+                displayTable();
+            }
+        }
     }
 </script>
 </body>
