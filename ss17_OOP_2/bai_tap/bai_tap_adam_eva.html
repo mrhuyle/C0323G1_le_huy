@@ -5,11 +5,65 @@
     <title>Câu chuyện Adam và Eva ăn táo</title>
 </head>
 <body>
+<p id="result"></p>
 <script>
-  class Apple {
+    class Apple {
+        constructor() {
+            this.weight = 10;
+        }
 
-  }
-  let apple = new Apple;
+        getWeight() {
+            return this.weight;
+        }
+
+        setWeight() {
+            this.weight--;
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        say() {
+            console.log('Say. I am ' + this.name + this.gender + this.weight);
+        }
+
+        eat(apple) {
+            if (apple.weight > 0) {
+                this.setWeight();
+                apple.setWeight();
+            }
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setWeight() {
+            return this.weight++;
+        }
+    }
+
+    let apple = new Apple;
+    let adam = new Human('Adam', 'Male', 50);
+    let eva = new Human('Eva', 'Female', 40);
+    adam.say();
+    eva.say();
+    eatApple(adam, eva);
+
+    function eatApple(adam, eva) {
+        while (apple.weight > 0) {
+            adam.eat(apple);
+            document.write(adam.name + ' ăn.' + ' Cân nặng của ' + adam.name + ' là ' + adam.getWeight() + ' đơn vị ' + '. Táo còn: ' + apple.getWeight() + ' đơn vị' + '<br>');
+            eva.eat(apple);
+            document.write(eva.name + ' ăn.' + ' Cân nặng của ' + eva.name + ' là ' + eva.getWeight() + ' đơn vị ' + '. Táo còn: ' + apple.getWeight() + ' đơn vị' + '<br><br>');
+        }
+    }
+
 </script>
 </body>
 </html>

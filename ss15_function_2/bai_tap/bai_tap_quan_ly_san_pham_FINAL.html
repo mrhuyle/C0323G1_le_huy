@@ -93,15 +93,23 @@
 
     function search() {
         let input = document.getElementById('product').value;
-        let check = false;
         let index;
+        let check = false
+        let tempArr = [];
         for (let i = 0; i < arr.length; i++) {
             if (arr[i] == input) {
-                check = true;
                 index = i;
-                arr = [arr[i]]
+                tempArr = arr;
+                arr = [arr[i]];
                 displayTable();
+                arr = tempArr;
+                check = true;
             }
+        }
+        if (input == '') {
+            displayTable();
+        } else if (check == false) {
+            alert('Không tìm thấy sản phẩm')
         }
     }
 </script>
