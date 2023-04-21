@@ -12,23 +12,50 @@
         }
 
         connectToLamp(lamp) {
-            alert('Had already connect to lamp')
+            lamp.status = this.status;
         }
 
         switchOff() {
-            if (this.status == false) {
-                this.status == true;
-                connectToLamp(lamp);
+            if (this.status == true) {
+                this.status = false;
+                lamp.turnOff();
             }
         }
 
         switchOn() {
+            if (this.status == false) {
+                this.status = true;
+                lamp.turnOn();
+            }
+        }
+    }
+
+    class Lamp {
+        constructor() {
+            this.status = false;
+        }
+
+        turnOff() {
             if (this.status == true) {
-                this.status == false;
-                connectToLamp(lamp);
+                alert('DARK');
+                this.status = false;
             }
         }
 
+        turnOn() {
+            if (this.status == false) {
+                alert('LIGHT');
+                this.status = true;
+            }
+        }
+    }
+
+    let button = new Button();
+    let lamp = new Lamp();
+    button.connectToLamp(lamp);
+    for (let i = 0; i < 10; i++) {
+        button.switchOn();
+        button.switchOff();
     }
 </script>
 </body>
