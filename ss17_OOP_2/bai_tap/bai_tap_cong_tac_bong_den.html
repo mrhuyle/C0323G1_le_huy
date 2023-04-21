@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Công tắc và bóng đèn</title>
+</head>
+<body>
+<script>
+    class Button {
+        constructor() {
+            this.status = false;
+        }
+
+        connectToLamp(lamp) {
+            alert('Had already connect to lamp')
+        }
+
+        switchOff() {
+            if (this.status == false) {
+                this.status == true;
+                connectToLamp(lamp);
+            }
+        }
+
+        switchOn() {
+            if (this.status == true) {
+                this.status == false;
+                connectToLamp(lamp);
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

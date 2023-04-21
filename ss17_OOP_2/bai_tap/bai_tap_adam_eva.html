@@ -8,8 +8,9 @@
 <p id="result"></p>
 <script>
     class Apple {
-        constructor() {
-            this.weight = 10;
+        constructor(kilo,name) {
+            this.weight = kilo ;
+            this.name = name;
         }
 
         getWeight() {
@@ -32,10 +33,10 @@
             console.log('Say. I am ' + this.name + this.gender + this.weight);
         }
 
-        eat(apple) {
-            if (apple.weight > 0) {
+        eat(fruit) {
+            if (fruit.weight > 0) {
                 this.setWeight();
-                apple.setWeight();
+                fruit.setWeight();
             }
         }
 
@@ -48,19 +49,19 @@
         }
     }
 
-    let apple = new Apple;
+    let apple = new Apple(10, 'Táo');
+    let melon = new Apple(15, 'Dưa');
     let adam = new Human('Adam', 'Male', 50);
     let eva = new Human('Eva', 'Female', 40);
-    adam.say();
-    eva.say();
-    eatApple(adam, eva);
+    eatFruit(adam, eva, apple);
+    eatFruit(adam, eva, melon);
 
-    function eatApple(adam, eva) {
-        while (apple.weight > 0) {
-            adam.eat(apple);
-            document.write(adam.name + ' ăn.' + ' Cân nặng của ' + adam.name + ' là ' + adam.getWeight() + ' đơn vị ' + '. Táo còn: ' + apple.getWeight() + ' đơn vị' + '<br>');
-            eva.eat(apple);
-            document.write(eva.name + ' ăn.' + ' Cân nặng của ' + eva.name + ' là ' + eva.getWeight() + ' đơn vị ' + '. Táo còn: ' + apple.getWeight() + ' đơn vị' + '<br><br>');
+    function eatFruit(human1, human2, fruit) {
+        while (fruit.getWeight() > 0) {
+            human1.eat(fruit);
+            document.write(human1.name + ' ăn.' + ' Cân nặng của ' + human1.name + ' là ' + human1.getWeight() + ' đơn vị ' + fruit.name + 'còn: ' + fruit.getWeight() + ' đơn vị' + '<br>');
+            human2.eat(fruit);
+            document.write(human2.name + ' ăn.' + ' Cân nặng của ' + human2.name + ' là ' + human2.getWeight() + ' đơn vị ' + fruit.name + 'còn: ' + fruit.getWeight() + ' đơn vị' + '<br><br>');
         }
     }
 
