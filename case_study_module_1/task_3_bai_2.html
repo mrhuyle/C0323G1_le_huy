@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3 Bài 2</title>
+</head>
+<body>
+<script>
+    let arrA = [7, 2, 5, 3, 5, 3];
+    let arrB = [7, 2, 5, 4, 4, 6, 6, 6, 3, 5, 3];
+    console.log(missingValue(arrA, arrB));
+
+    function missingValue(a, b) {
+        let missingValueArr = []
+        for (let i = 0; i < b.length; i++) {
+            if (!arrA.includes(b[i]) && !missingValueArr.includes(b[i])) {
+                missingValueArr.push(b[i]);
+            }
+        }
+        return missingValueArr;
+    }
+</script>
+</body>
+</html>

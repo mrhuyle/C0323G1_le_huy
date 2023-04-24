@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3 Bài 3</title>
+</head>
+<body>
+<script>
+    let numerators = [5, 2, 5];
+    let denominators = [6, 3, 4];
+    console.log(maxFraction(numerators, denominators));
+
+    function maxFraction(a, b) {
+        let max = a[0] / b[0];
+        let index = 0;
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] / b[i] > max) {
+                max = a[i] / b[i];
+                index = i;
+            }
+        }
+        return index;
+    }
+</script>
+</body>
+</html>

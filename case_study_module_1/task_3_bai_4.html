@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3 Bài 4</title>
+</head>
+<style>
+    table, tr, td {
+        border: 1px solid black;
+        height: 30px;
+        text-align: center;
+    }
+
+    th {
+        border: 1px solid black;
+        height: 30px;
+        background-color: #adf3e4;
+    }
+</style>
+<body>
+<p id="result"></p>
+<p id="total"></p>
+<script>
+    let arr = ['Cafe', 'Cam vắt', 'Nước ép cà rốt', 'Nước ép cà chua', 'Nước lọc', 'Nước dừa'];
+    let price = [10000, 20000, 20000, 20000, 5000, 17000];
+    let total = 0;
+    document.getElementById('total').innerHTML = 'Tổng là ' + total;
+    displayMenu();
+    let orderNumber;
+    do {
+        orderNumber = +prompt('Mời bạn nhấn số chọn món theo danh sách sau \n 1. Cà phê \n 2. Cam vắt \n 3. Nước ép cà rốt \n 4.Nước ép cà chua \n 5.Nước lọc ' +
+            '\n 6.Nước dừa \n 7. Thoát chọn món')
+        console.log(orderNumber)
+        if (orderNumber==7 || orderNumber==0) {
+            confirm();
+            break;
+        } else {order(orderNumber - 1)};
+    } while (true);
+
+    function displayMenu() {
+        let str = '<table><tr><th>STT</th><th>Menu</th><th>Đơn giá</th><th>Số lượng</th><th>Thành tiền</th></tr>';
+        for (let i = 0; i < arr.length; i++) {
+            str += '<tr><td><button onclick="order(' + i + ')">' + (i + 1) + '</button></td><td>' + arr[i] + '</td><td id="price' + i + '"></td><td id="unit' + i + '"></td><td id="total' + i + '"></td></tr>'
+        }
+        str += '<tr><td><button onclick="confirm()">7</button></td><td colspan="4">Thoát gọi món</td></table>'
+        document.getElementById('result').innerHTML = str;
+    }
+
+    function order(index) {
+        if (index != 6 || index != -1) {
+            alert('Đơn giá của ' + arr[index] + ' : ' + price[index]);
+            let unitPrice = price[index];
+            let unit = +prompt('Nhập số lượng ' + arr[index] + ' muốn mua?');
+            let totalOfProduct = unitPrice * unit;
+            document.getElementById('price' + index).innerHTML = unitPrice;
+            document.getElementById('unit' + index).innerHTML = unit;
+            document.getElementById('total' + index).innerHTML = totalOfProduct;
+            total += totalOfProduct;
+            document.getElementById('total').innerHTML = 'Tổng là: ' + total;
+        } else {
+            confirm();
+        }
+    }
+
+    function confirm() {
+        alert('Tổng tiền phải thanh toán là ' + total + ' Nhấn ok để xem hoá đơn');
+    }
+</script>
+</body>
+</html>
