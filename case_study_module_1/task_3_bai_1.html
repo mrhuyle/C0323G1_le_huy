@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3 Bài 1</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    let n = +prompt('Nhập chiều dài mảng a, mỗi phần tử là số nguyên');
+    let a = new Array(n);
+    for (let i = 0; i < n; i++) {
+        a[i] = +prompt('Nhập phần tử a[' + i + ']');
+    }
+    let b = prefixSums(a);
+    document.getElementById('result').innerHTML = 'a = [' + a + ']<br>' + 'b = [' + b + ']';
+
+    function prefixSums(arr) {
+        let newArr = new Array(arr.length);
+        newArr[0] = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+            newArr[i] = newArr[i - 1] + arr[i];
+        }
+        return newArr;
+    }
+
+</script>
+</body>
+</html>
