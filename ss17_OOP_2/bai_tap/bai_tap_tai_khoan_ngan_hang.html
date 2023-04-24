@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tài khoản ngân hàng</title>
+</head>
+<style>
+    table, th, tr {
+        border: 2px solid black;
+        border-collapse: collapse;
+        font-family: "Lucida Grande"
+    }
+</style>
+<body>
+<table>
+    <tr>
+        <th>STT</th>
+        <th>STK</th>
+        <th>Tên khách hàng</th>
+        <th>Số tiền</th>
+    </tr>
+</table>
+<script>
+    class Account {
+        constructor(accountNo, name, amout) {
+            this._accountNo = accountNo;
+            this._name = name;
+            this._amout = amout;
+        }
+
+        get accountNo() {
+            return this._accountNo;
+        }
+
+        set accountNo(value) {
+            this._accountNo = value;
+        }
+
+        get name() {
+            return this._name;
+        }
+
+        set name(value) {
+            this._name = value;
+        }
+
+        get amout() {
+            return this._amout;
+        }
+
+        set amout(value) {
+            this._amout = value;
+        }
+
+        toString() {
+            return this.accountNo + '+' + this.name + '+' + this.amout;
+        }
+
+        deposit(value) {
+            return this.amout = this.amout + value
+        }
+
+        withdraw(value) {
+            if (this._amout > 0 && this._amout >= value) {
+                return this.amout = this.amout - value;
+            }
+            return alert('Lỗi rút tiền (lượng tiền âm hoặc số tiền rút lớn hơn lượng tiền hiện có)');
+        }
+    }
+
+    let accountA = new Account('TK001', "mrhuyle", 100000);
+    console.log(accountA.toString())
+    console.log(accountA)
+    console.log(accountA.deposit(10000));
+    console.log(accountA.withdraw(20000));
+    //phần hiện ra table làm sau
+
+let arrAccNo = [];
+let arrName = [];
+let arrAmout = [];
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loop Bài 2</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    let h = +prompt('Nhập chiều cao tam giác cân')
+    let str = '';
+    for (let i = 1; i < h + 1; i++) {
+        for (let j = 0; j < h - i; j++) {
+            str += '&nbsp&nbsp';
+        }
+        for (let j = 0; j < 2 * i - 1; j++) {
+            str += '*';
+        }
+        str += '<br>';
+    }
+    document.getElementById('result').innerHTML = str;
+</script>
+</body>
+</html>

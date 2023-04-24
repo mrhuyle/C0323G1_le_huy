@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loop Bài 3</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    let h = +prompt('Nhập cạnh của tam giác cân')
+    let str = '';
+    for (let i = 0; i < h; i++) {
+        for (let j = 0; j < h + i; j++) {
+            if (j == h - i - 1 || j == h + i - 1) {
+                str += '*'
+            } else if (i == h - 1) {
+                str += '*'
+            } else {
+                str += '&nbsp&nbsp'
+            }
+        }
+        str += '<br>'
+    }
+    document.getElementById('result').innerHTML = str;
+</script>
+</body>
+</html>

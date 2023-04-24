@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loop Bài 1</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    let h = +prompt('Nhập vào chiều cao tam giác vuông rỗng');
+    let str = '';
+    for (let i = 0; i < h; i++) {
+        for (let j = 0; j < i; j++) {
+            if (j == 0 || j == i - 1) {
+                str += '*';
+            } else {
+                str += '&nbsp&nbsp';
+            }
+        }
+        str += '<br>';
+    }
+    for (let i = 0; i < h; i++) {
+        str += "*";
+    }
+    document.getElementById('result').innerHTML = str;
+</script>
+</body>
+</html>

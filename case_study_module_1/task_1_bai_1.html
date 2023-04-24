@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    let salary = +prompt('Nhập lương nhân viên');
+    let tax;
+    if (salary < 7) {
+        tax = salary * 0.05;
+    } else if (salary < 15) {
+        tax = (7 * 0.05) + ((salary - 7) * 0.1);
+    } else {
+        tax = (7 * 0.05) + (8 * 0.1) + ((salary - 15) * 0.2);
+    }
+    let income = salary - tax;
+    document.write('Lương là: ' + salary + '<br>' + 'Thuế là ' + tax + '<br>' + 'Thu nhập là ' + income + '<br>');
+</script>
+</body>
+</html>
