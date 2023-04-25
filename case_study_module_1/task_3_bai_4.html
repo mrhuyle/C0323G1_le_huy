@@ -29,7 +29,7 @@
     let orderNumber;
     do {
         orderNumber = +prompt('Mời bạn nhấn số chọn món theo danh sách sau \n 1. Cà phê \n 2. Cam vắt \n 3. Nước ép cà rốt \n 4.Nước ép cà chua \n 5.Nước lọc ' +
-            '\n 6.Nước dừa \n 7. Thoát chọn món')
+            '\n 6.Nước dừa \n 7. Thoát chọn món');
         console.log(orderNumber)
         if (orderNumber==7 || orderNumber==0) {
             confirm();
@@ -40,9 +40,9 @@
     function displayMenu() {
         let str = '<table><tr><th>STT</th><th>Menu</th><th>Đơn giá</th><th>Số lượng</th><th>Thành tiền</th></tr>';
         for (let i = 0; i < arr.length; i++) {
-            str += '<tr><td><button onclick="order(' + i + ')">' + (i + 1) + '</button></td><td>' + arr[i] + '</td><td id="price' + i + '"></td><td id="unit' + i + '"></td><td id="total' + i + '"></td></tr>'
+            str += '<tr><td><button onclick="order(' + i + ')">' + (i + 1) + '</button></td><td>' + arr[i] + '</td><td id="price' + i + '"></td><td id="unit' + i + '"></td><td id="total' + i + '"></td></tr>';
         }
-        str += '<tr><td><button onclick="confirm()">7</button></td><td colspan="4">Thoát gọi món</td></table>'
+        str += '<tr><td><button onclick="confirm()">7</button></td><td colspan="4">Thoát gọi món</td></table>';
         document.getElementById('result').innerHTML = str;
     }
 
