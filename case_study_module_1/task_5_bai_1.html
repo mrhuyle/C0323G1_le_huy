@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 5 Bài 1</title>
+</head>
+<body>
+<script>
+    let m = +prompt('Nhập chiều ma trận m');
+    let n = +prompt('Nhập chiều ma trận n');
+    let arr = [];
+    let total = 0;
+
+    for (let i = 0; i < m; i++) {
+        let tempArr = [];
+        for (let j = 0; j < n; j++) {
+            tempArr.push(+prompt('Nhập phần tử cho ma trận 2 chiều:' + i + j));
+        }
+        arr[i] = tempArr;
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            if (arr[i][j] % 2 == 0) {
+                total += arr[i][j];
+            }
+        }
+    }
+    console.log(arr);
+    console.log(total);
+</script>
+</body>
+</html>
