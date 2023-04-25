@@ -7,7 +7,6 @@
 <body>
 <p id="result"></p>
 <script>
-
     main();
 
     function main() {
@@ -16,7 +15,6 @@
         let text = findLongestWord(newStr);
         return document.getElementById('result').innerHTML = 'Chuỗi nhập vào : ' + str + '<br>Chuỗi sau xử lý : ' + newStr + '<br>Từ dài nhất : ' + text;
     }
-
 
     function modifyStr(str) {
         let arr = str.toLowerCase().split(' ');
