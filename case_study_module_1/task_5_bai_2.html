@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 5 Bài 2</title>
+</head>
+<body>
+<p>Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có trong mảng đó.</p>
+<p id="result"></p>
+<script>
+    let m = +prompt('Nhập chiều ma trận m');
+    let n = +prompt('Nhập chiều ma trận n');
+    let arr = new Array(m);
+    for (let i = 0; i < n; i++) {
+        arr[i] = (new Array(n));
+    }
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            arr[i][j] = +prompt('Nhập phần tử cho ma trận 2 chiều:' + i + j);
+        }
+    }
+    document.getElementById('result').innerHTML = 'Mảng nhập vào : ' + arr + '<br> Các phần tử là số nguyên tố: ' + listPrimeNumber(arr);
+
+    function listPrimeNumber(arr) {
+        let result = ''
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (checkPrimeNumber(arr[i][j])) {
+                    result += arr[i][j] + ', '
+                }
+            }
+        }
+        return result;
+    }
+
+    function checkPrimeNumber(number) {
+        if (number <= 1) {
+            return false;
+        } else {
+            let count = 0;
+            for (let i = 2; i <= number; i++) {
+                if (number % i == 0) {
+                    count++;
+                }
+            }
+            if (count == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+</script>
+</body>
+</html>
