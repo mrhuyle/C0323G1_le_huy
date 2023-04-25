@@ -5,18 +5,21 @@
     <title>Task 5 Bài 1</title>
 </head>
 <body>
+<p>Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các số nhập từ bàn phím.</p>
+<p id="result"></p>
 <script>
     let m = +prompt('Nhập chiều ma trận m');
     let n = +prompt('Nhập chiều ma trận n');
-    let arr = [];
+    let arr = new Array(m);
+    for (let i = 0; i < n; i++) {
+        arr[i] = (new Array(n));
+    }
     let total = 0;
 
-    for (let i = 0; i < m; i++) {
-        let tempArr = [];
-        for (let j = 0; j < n; j++) {
-            tempArr.push(+prompt('Nhập phần tử cho ma trận 2 chiều:' + i + j));
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            arr[i][j] = +prompt('Nhập phần tử cho ma trận 2 chiều:' + i + j);
         }
-        arr[i] = tempArr;
     }
 
     for (let i = 0; i < arr.length; i++) {
@@ -26,8 +29,7 @@
             }
         }
     }
-    console.log(arr);
-    console.log(total);
+    document.getElementById('result').innerHTML = 'Mảng nhập vào : ' + arr + '<br> Tổng các phần tử là số chẵn: ' + total;
 </script>
 </body>
 </html>
