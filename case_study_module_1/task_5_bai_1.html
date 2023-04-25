@@ -10,26 +10,31 @@
 <script>
     let m = +prompt('Nhập chiều ma trận m');
     let n = +prompt('Nhập chiều ma trận n');
-    let arr = new Array(m);
-    for (let i = 0; i < n; i++) {
-        arr[i] = (new Array(n));
-    }
-    let total = 0;
+    let array = createArr(m, n);
+    document.getElementById('result').innerHTML = 'Mảng nhập vào : ' + array + '<br> Tổng các phần tử là số chẵn: ' + getTotal(array);
 
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr[i].length; j++) {
-            arr[i][j] = +prompt('Nhập phần tử cho ma trận 2 chiều:' + i + j);
-        }
-    }
-
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr[i].length; j++) {
-            if (arr[i][j] % 2 == 0) {
-                total += arr[i][j];
+    function createArr(m, n) {
+        let arr = new Array(m);
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = new Array(n);
+            for (let j = 0; j < arr[i].length; j++) {
+                arr[i][j] = +prompt('Nhập phần tử cho ma trận 2 chiều:' + i + j);
             }
         }
+        return arr;
     }
-    document.getElementById('result').innerHTML = 'Mảng nhập vào : ' + arr + '<br> Tổng các phần tử là số chẵn: ' + total;
+
+    function getTotal(arr) {
+        let total = 0
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] % 2 == 0) {
+                    total += arr[i][j];
+                }
+            }
+        }
+        return total;
+    }
 </script>
 </body>
 </html>
