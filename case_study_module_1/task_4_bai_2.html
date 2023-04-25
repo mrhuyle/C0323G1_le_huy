@@ -5,21 +5,25 @@
     <title>Task 4 Bài 2</title>
 </head>
 <body>
+<p> Cho xâu kí tự. Hãy đếm số lượng ký tự khác nhau trong xâu đó
+    Ví dụ: s = "cabca", thì kết quả differentSymbolsNaive(s) = 3.
+    Có 3 ký tự khác nhau là a, b và c.
+</p>
 <script>
-  let s = prompt('Nhập chuỗi ký tự bất kỳ');
-  document.write('Chuỗi nhập vào là : ' + s + '<br> Số ký tự khác nhau trong chuỗi :' + differentSymbolsNaive(s));
+    let s = prompt('Nhập chuỗi ký tự bất kỳ');
+    document.write('Chuỗi nhập vào là : ' + s + '<br> Số ký tự khác nhau trong chuỗi :' + differentSymbolsNaive(s));
 
-  function differentSymbolsNaive(str) {
-      let arr = str.split('');
-      let newArr = [arr[0]];
-      let newStr = newArr.join('');
-      for (let i = 0; i < arr.length; i++) {
-          newStr = newArr.join('');
-          if (!newStr.includes(arr[i]))
-              newArr.push(arr[i]);
-      }
-      return newArr.length;
-  }
+    function differentSymbolsNaive(str) {
+        let arr = str.split('');
+        let newArr = [arr[0]];
+        let newStr = newArr.join('');
+        for (let i = 0; i < arr.length; i++) {
+            newStr = newArr.join('');
+            if (!newStr.includes(arr[i]))
+                newArr.push(arr[i]);
+        }
+        return newArr.length;
+    }
 </script>
 </body>
 </html>
