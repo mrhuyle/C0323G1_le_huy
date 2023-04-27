@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Algorithm 8</title>
+</head>
+<body>
+<p>Nhập 2 số nguyên dương a và b. Sau đó in ra ước chung lớn nhất và bội chung nhỏ nhất
+    của 2 số nguyên dương a và b đó.</p>
+<script>
+    let a = +prompt('Nhập số a');
+    let b = +prompt('Nhập số b');
+    document.write(`Số a là ${a} và số b là ${b} <br>`);
+    document.write(`Ước chung lớn nhất là ${getGCD(a,b)}<br>`);
+    document.write(`Bội chung nhỏ nhât là ${getGCP(a,b)}<br>`);
+
+    //Greatest Common Divisor = GCD
+    //Greatest Common Multiple = GCP
+    function getGCD(a, b) {
+        if (b > a) {
+            let temp = 0;
+            temp = a;
+            a = b;
+            b = temp;
+        }
+        let remainder = a % b;
+        let divisor = a;
+        let dividend = b;
+        for (let i = 0; remainder != 0; i++) {
+            divisor = dividend;
+            dividend = remainder;
+            remainder = divisor % dividend;
+        }
+        return dividend;
+    }
+
+    function getGCP(a, b) {
+        return  (a*b) / getGCD(a, b);
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Algorithm 6</title>
+</head>
+<body>
+<p>Tính n!! = 1*3*5*.....*n(n lẽ)
+    <br>= 2*4*6*....*n(n chẵn)</p>
+<script>
+    let n = +prompt('Nhập n');
+
+    function getFactorial(number) {
+        let result = 1;
+        for (let i = number; i > 0; i = i - 2) {
+            result *= i;
+        }
+        return result;
+    }
+
+    document.write(getFactorial(n));
+</script>
+</body>
+</html>

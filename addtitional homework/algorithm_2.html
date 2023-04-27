@@ -8,17 +8,15 @@
 <p>Nhập vào tháng, năm bất kỳ. In ra số ngày tương ứng với tháng, năm đó.</p>
 <p id="result"></p>
 <script>
-    let month = +prompt('Nhập số tháng');
-    let year = +prompt('Nhập số năm');
+    let month = prompt('Nhập số tháng');
+    let year = prompt('Nhập số năm');
     let days = 0;
-    if (/[1|3|5|7|8]/.test(month) || month == 10 || month == 12) {
+    if (/[13578]||(10)||(12)/.test(month)) {
         days = 31;
-    } else if (/[4|6|9]/.test(month) || month == 11) {
+    } else if (/[469]||(11)/) {
         days = 30;
     } else {
-        if (year % 4 == 0 && year % 100 == 0) {
-            days = 29;
-        } else if (year % 100 == 0 && year % 400 == 0) {
+        if ((year % 4 == 0 && year % 100 != 0)|| year % 400 == 0) {
             days = 29;
         } else {
             days = 28;

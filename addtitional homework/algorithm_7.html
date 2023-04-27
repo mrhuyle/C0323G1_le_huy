@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Algorithm 7</title>
+</head>
+<body>
+<p>Tính tổng và tích các chữ số của một số nguyên dương m cho trước
+    <br>(Ví dụ : m=234=> S=2+3+4=9, P=2*3*4=24)</p>
+<script>
+    let m = 234;
+    let S = 0;
+    let P = 1;
+    let str = m.toString();
+    console.log(str.length)
+    for (let i = 0; i < str.length; i++) {
+        S += Number(str[i]);
+        P *= Number(str[i]);
+    }
+    document.write('m = ' + m + '<br> S = ' + S + '<br>' + 'P = ' + P);
+</script>
+</body>
+</html>
