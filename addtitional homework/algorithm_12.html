@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Algorithm 12</title>
+</head>
+<body>
+<script>
+    // Lập ma trận m dòng x n cột và nhập các phần tử
+    let m = +prompt('Nhập m là số dòng của ma trận')
+    let n = +prompt('Nhập n là số cột của ma trận')
+    let arr = new Array(m)
+    for (let i = 0; i < m; i++) {
+        arr[i] = new Array(n)
+        for (let j = 0; j < n; j++) {
+            arr[i][j] = +prompt('Nhập phần tử arr[' + i + '][' + j + ']')
+        }
+    }
+    console.log(arr)
+
+    //b. Tính tích các số là bội số của 3 nằm trên dòng đầu tiên của ma trận a.
+    function getMultiple() {
+        let result = 1;
+        for (let i = 0; i < arr[0].length; i++) {
+            if (arr[0][i] % 3 == 0) {
+                result *= arr[0][i];
+            }
+        }
+        return result;
+    }
+
+    console.log(getMultiple());
+
+    //c. Tạo ra mảng một chiều X[i] với X[i] là các giá trị lớn nhất trên dòng i của ma trận a
+    console.log(getXi())
+
+    function getXi() {
+        let newArr = [];
+        let max = 0
+        for (let i = 0; i < arr.length; i++) {
+            max = arr[i][0];
+            for (let j = 0; j < arr[0].length; j++) {
+                if (arr[i][j] > max) {
+                    max = arr[i][i];
+                    newArr.push(arr[i][j]);
+                }
+            }
+        }
+        return newArr;
+    }
+
+    //d. Xoá đi phần tử đầu tiên của mảng X[i], xuất lại mảng X[i].
+    console.log(getXi().pop());
+</script>
+</body>
+</html>

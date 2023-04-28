@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Algorithm 9</title>
+</head>
+<body>
+<script>
+    let str = 'AbCdE';
+    console.log(reverseStr(str));
+    console.log(modifyUpperCase(str));
+    console.log(modifyLowerCase(str));
+    console.log(modifyStr(str));
+
+    //In ra chuỗi đảo ngược
+    function reverseStr(str) {
+        let arr = str.split('');
+        arr.reverse();
+        let newStr = arr.join('');
+        return newStr;
+    }
+
+    //Đổi chuổi đã cho sang chữ hoa
+    function modifyUpperCase(str) {
+        return str.toUpperCase();
+    }
+
+    //Đổi chuổi đã cho sang chữ thường
+    function modifyLowerCase(str) {
+        return str.toLowerCase();
+    }
+
+    //Đổi chuỗi đã cho sang vừa chữ hoa vừa chữ thường (các ký tự chữ hoa thì thành chữ thường và ngược lại)
+    function modifyStr() {
+        let arr = str.split('');
+        for (let i = 0; i < arr.length; i++) {
+            let code = arr[i].charCodeAt(0);
+            if (code >= 65 && code <= 90) {
+                arr[i] = arr[i].toLowerCase();
+            } else if (code >= 97 && code <= 122) {
+                arr[i] = arr[i].toUpperCase();
+            }
+        }
+        let newStr = arr.join('');
+        return newStr;
+    }
+</script>
+</body>
+</html>

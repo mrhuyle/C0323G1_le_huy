@@ -31,9 +31,10 @@
     }
 
     function addProduct() {
-        if (addCondition == true) {
+        if (addCondition) {
             let product = document.getElementById('product').value;
-            productArrCheck = product.split('')
+            product = product.trim();
+            let productArrCheck = product.split('')
             let checkOfEditAdd = true
             for (let i = 0; i < productArrCheck.length; i++) {
                 if (productArrCheck[i] == ' ') {
@@ -108,7 +109,7 @@
         }
         if (input == '') {
             displayTable();
-        } else if (check == false) {
+        } else if (!check) {
             alert('Không tìm thấy sản phẩm')
         }
     }

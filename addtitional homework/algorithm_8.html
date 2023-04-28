@@ -11,8 +11,8 @@
     let a = +prompt('Nhập số a');
     let b = +prompt('Nhập số b');
     document.write(`Số a là ${a} và số b là ${b} <br>`);
-    document.write(`Ước chung lớn nhất là ${getGCD(a,b)}<br>`);
-    document.write(`Bội chung nhỏ nhât là ${getGCP(a,b)}<br>`);
+    document.write(`Ước chung lớn nhất là ${getGCD(a, b)}<br>`);
+    document.write(`Bội chung nhỏ nhât là ${getGCP(a, b)}<br>`);
 
     //Greatest Common Divisor = GCD
     //Greatest Common Multiple = GCP
@@ -35,7 +35,7 @@
     }
 
     function getGCP(a, b) {
-        return  (a*b) / getGCD(a, b);
+        return (a * b) / getGCD(a, b);
     }
 
 </script>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Algorithm 10</title>
+</head>
+<style>
+    table, th, tr, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+</style>
+<body>
+<p id="result"></p>
+<script>
+    let str = 'Le    Huy Abc   Huy   Le   Huy     Huy    Huy  Huy Abc zdy';
+    //Xử lý qua mảng:
+    let arr = str.split(' ');
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] != '') {
+            newArr.push(arr[i]);
+        }
+    }
+    //a. In mỗi từ trên mỗi dòng
+    print();
+
+    function print() {
+        for (let i = 0; i < newArr.length; i++) {
+            document.write(newArr[i] + '<br>');
+        }
+    }
+
+    //b. Đếm số từ có trong chuổi đã cho.
+    console.log(countWord());
+
+    function countWord() {
+        return newArr.length;
+    }
+
+    //b. Đưa ra bảng tần số xuất hiện của các từ: gồm 2 bước . Đầu tiên tạo hàm count và sau đó display.
+
+    function display(arr, countArr) {
+
+        let tableStr = '<table>\n' +
+            '    <tr>\n' +
+            '        <th>Từ</th>\n' +
+            '        <th>Tần suất</th>\n' +
+            '    </tr>'
+        for (let i = 0; i < arr.length; i++) {
+            if (countArr[i] != 0) {
+                tableStr += '<tr>\n' +
+                    '        <td>' + arr[i] + '</td>' +
+                    '         <td>' + countArr[i] + '</td>\n' +
+                    '    </tr>'
+            }
+        }
+        tableStr += '</table>'
+        document.getElementById('result').innerHTML = tableStr;
+    }
+
+
+
+    //Hàm đếm số và đưa vào bảng count tương ứng index của các phần tử từ
+    const checkArr = Array.from(newArr);
+    let countArr = [];
+    count();
+    display(checkArr, countArr);
+    function count() {
+        let count = 0
+        for (let i = 0; i < checkArr.length; i++) {
+            for (let j = 0; j < newArr.length; j++) {
+                if (checkArr[i] == newArr[j]) {
+                    newArr[j] = '';
+                    count++
+                }
+            }
+            countArr.push(count);
+            count = 0;
+        }
+    }
+</script>
+</body>
+</html>
